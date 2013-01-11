@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>class MiniTest::Generators::ScaffoldGenerator - minitest-rails-0.2 Documentation</title>
+<title>class MiniTest::Generators::ScaffoldGenerator - minitest-rails-0.5 Documentation</title>
 
 <link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
 
@@ -82,6 +82,10 @@
 
   <ul class="link-list">
     
+    <li><a href="#method-i-accessible_attributes">#accessible_attributes</a>
+    
+    <li><a href="#method-i-attributes_hash">#attributes_hash</a>
+    
     <li><a href="#method-i-create_test_files">#create_test_files</a>
     
   </ul>
@@ -131,35 +135,33 @@
   
     <li><a href="../../MiniTest/Rails/ActionController.html">MiniTest::Rails::ActionController</a>
   
-    <li><a href="../../MiniTest/Rails/ActionController/ControllerLookup.html">MiniTest::Rails::ActionController::ControllerLookup</a>
-  
-    <li><a href="../../MiniTest/Rails/ActionController/TestCase.html">MiniTest::Rails::ActionController::TestCase</a>
+    <li><a href="../../ActionController/TestCase.html">MiniTest::Rails::ActionController::TestCase</a>
   
     <li><a href="../../MiniTest/Rails/ActionDispatch.html">MiniTest::Rails::ActionDispatch</a>
   
-    <li><a href="../../MiniTest/Rails/ActionDispatch/IntegrationTest.html">MiniTest::Rails::ActionDispatch::IntegrationTest</a>
+    <li><a href="../../ActionDispatch/IntegrationTest.html">MiniTest::Rails::ActionDispatch::IntegrationTest</a>
   
     <li><a href="../../MiniTest/Rails/ActionMailer.html">MiniTest::Rails::ActionMailer</a>
   
-    <li><a href="../../MiniTest/Rails/ActionMailer/TestCase.html">MiniTest::Rails::ActionMailer::TestCase</a>
-  
     <li><a href="../../MiniTest/Rails/ActionView.html">MiniTest::Rails::ActionView</a>
   
-    <li><a href="../../MiniTest/Rails/ActionView/TestCase.html">MiniTest::Rails::ActionView::TestCase</a>
+    <li><a href="../../ActionView/TestCase.html">MiniTest::Rails::ActionView::TestCase</a>
   
     <li><a href="../../MiniTest/Rails/ActiveSupport.html">MiniTest::Rails::ActiveSupport</a>
   
-    <li><a href="../../MiniTest/Rails/ActiveSupport/TestCase.html">MiniTest::Rails::ActiveSupport::TestCase</a>
-  
-    <li><a href="../../MiniTest/Rails/ActiveSupport/Testing.html">MiniTest::Rails::ActiveSupport::Testing</a>
-  
-    <li><a href="../../MiniTest/Rails/ActiveSupport/Testing/Declarative.html">MiniTest::Rails::ActiveSupport::Testing::Declarative</a>
+    <li><a href="../../ActiveSupport/TestCase.html">MiniTest::Rails::ActiveSupport::TestCase</a>
   
     <li><a href="../../MiniTest/Rails/Railtie.html">MiniTest::Rails::Railtie</a>
   
     <li><a href="../../MiniTest/Rails/Tasks.html">MiniTest::Rails::Tasks</a>
   
     <li><a href="../../MiniTest/Rails/Tasks/SubTestTask.html">MiniTest::Rails::Tasks::SubTestTask</a>
+  
+    <li><a href="../../MiniTest/Rails/TestCase.html">MiniTest::Rails::TestCase</a>
+  
+    <li><a href="../../MiniTest/Rails/Testing.html">MiniTest::Rails::Testing</a>
+  
+    <li><a href="../../MiniTest/Rails/Testing/ConstantLookup.html">MiniTest::Rails::Testing::ConstantLookup</a>
   
     <li><a href="../../Autotest.html">Autotest</a>
   
@@ -168,6 +170,26 @@
     <li><a href="../../Autotest/Migrate.html">Autotest::Migrate</a>
   
     <li><a href="../../Autotest/MinitestRails.html">Autotest::MinitestRails</a>
+  
+    <li><a href="../../ActionController.html">ActionController</a>
+  
+    <li><a href="../../ActionController/TestCase.html">ActionController::TestCase</a>
+  
+    <li><a href="../../ActionDispatch.html">ActionDispatch</a>
+  
+    <li><a href="../../ActionDispatch/IntegrationTest.html">ActionDispatch::IntegrationTest</a>
+  
+    <li><a href="../../ActionMailer.html">ActionMailer</a>
+  
+    <li><a href="../../ActionMailer/TestCase.html">ActionMailer::TestCase</a>
+  
+    <li><a href="../../ActionView.html">ActionView</a>
+  
+    <li><a href="../../ActionView/TestCase.html">ActionView::TestCase</a>
+  
+    <li><a href="../../ActiveSupport.html">ActiveSupport</a>
+  
+    <li><a href="../../ActiveSupport/TestCase.html">ActiveSupport::TestCase</a>
   
     <li><a href="../../Object.html">Object</a>
   
@@ -202,6 +224,71 @@
       <h3 class="section-header">Public Instance Methods</h3>
 
     
+      <div id="method-i-accessible_attributes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">accessible_attributes</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="accessible_attributes-source">
+            <pre><span class="ruby-comment"># File lib/generators/mini_test/scaffold/scaffold_generator.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">accessible_attributes</span>
+  <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">reject</span>(&amp;<span class="ruby-value">:reference?</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- accessible_attributes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- accessible_attributes-method -->
+
+    
+      <div id="method-i-attributes_hash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">attributes_hash</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="attributes_hash-source">
+            <pre><span class="ruby-comment"># File lib/generators/mini_test/scaffold/scaffold_generator.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">attributes_hash</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">accessible_attributes</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-identifier">accessible_attributes</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">a</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">name</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">name</span>
+    <span class="ruby-identifier">key_value</span> <span class="ruby-identifier">name</span>, <span class="ruby-node">&quot;@#{singular_table_name}.#{name}&quot;</span>
+  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">', '</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- attributes_hash-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- attributes_hash-method -->
+
+    
       <div id="method-i-create_test_files" class="method-detail ">
         
         <div class="method-heading">
@@ -218,7 +305,7 @@
 
           
           <div class="method-source-code" id="create_test_files-source">
-            <pre><span class="ruby-comment"># File lib/generators/mini_test/scaffold/scaffold_generator.rb, line 13</span>
+            <pre><span class="ruby-comment"># File lib/generators/mini_test/scaffold/scaffold_generator.rb, line 15</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">create_test_files</span>
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:spec</span>]
     <span class="ruby-identifier">template</span> <span class="ruby-string">&quot;controller_spec.rb&quot;</span>,

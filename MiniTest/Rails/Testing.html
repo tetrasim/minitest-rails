@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>class MiniTest::Generators::InstallGenerator - minitest-rails-0.5 Documentation</title>
+<title>module MiniTest::Rails::Testing - minitest-rails-0.5 Documentation</title>
 
 <link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
 
@@ -20,7 +20,7 @@
 <script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
 
 
-<body id="top" class="class">
+<body id="top" class="module">
 <nav id="metadata">
   <nav id="home-section" class="section">
   <h3 class="section-header">
@@ -47,7 +47,8 @@
     <nav id="file-list-section" class="section">
   <h3 class="section-header">Defined In</h3>
   <ul>
-    <li>lib/generators/mini_test/install/install_generator.rb
+    <li>lib/minitest/rails/constant_lookup.rb
+    <li>lib/minitest/rails/testing.rb
   </ul>
 </nav>
 
@@ -56,13 +57,7 @@
 
   <div id="class-metadata">
     
-    <nav id="parent-class-section" class="section">
-  <h3 class="section-header">Parent</h3>
-  
-  <p class="link">Rails::Generators::Base
-  
-</nav>
-
+    
     
     <!-- Method Quickref -->
 <nav id="method-list-section" class="section">
@@ -70,9 +65,9 @@
 
   <ul class="link-list">
     
-    <li><a href="#method-c-source_root">::source_root</a>
+    <li><a href="#method-c-all_tasks">::all_tasks</a>
     
-    <li><a href="#method-i-copy_minitest_files">#copy_minitest_files</a>
+    <li><a href="#method-c-run_tests">::run_tests</a>
     
   </ul>
 </nav>
@@ -186,7 +181,7 @@
 </nav>
 
 <div id="documentation">
-  <h1 class="class">class MiniTest::Generators::InstallGenerator</h1>
+  <h1 class="module">module MiniTest::Rails::Testing</h1>
 
   <div id="description" class="description">
     
@@ -210,10 +205,10 @@
       <h3 class="section-header">Public Class Methods</h3>
 
     
-      <div id="method-c-source_root" class="method-detail ">
+      <div id="method-c-all_tasks" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">source_root</span><span
+          <span class="method-name">all_tasks</span><span
             class="method-args">()</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
@@ -225,58 +220,69 @@
           
 
           
-          <div class="method-source-code" id="source_root-source">
-            <pre><span class="ruby-comment"># File lib/generators/mini_test/install/install_generator.rb, line 12</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">source_root</span>
-  <span class="ruby-ivar">@source_root</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>), <span class="ruby-string">'templates'</span>))
+          <div class="method-source-code" id="all_tasks-source">
+            <pre><span class="ruby-comment"># File lib/minitest/rails/testing.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">all_tasks</span>
+  <span class="ruby-constant">Dir</span>[<span class="ruby-string">&quot;test/*/&quot;</span>].<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span> <span class="ruby-regexp">%rtest\/(.+?)\//</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">dir</span>)[<span class="ruby-value">1</span>] }.<span class="ruby-identifier">select</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span>
+    <span class="ruby-operator">!</span><span class="ruby-constant">Dir</span>.<span class="ruby-identifier">glob</span>(<span class="ruby-node">&quot;test/#{dir}/**/*_test.rb&quot;</span>).<span class="ruby-identifier">empty?</span>
+  <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- source_root-source -->
+          </div><!-- all_tasks-source -->
           
         </div>
 
         
 
         
-      </div><!-- source_root-method -->
+      </div><!-- all_tasks-method -->
+
+    
+      <div id="method-c-run_tests" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">run_tests</span><span
+            class="method-args">(directories)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="run_tests-source">
+            <pre><span class="ruby-comment"># File lib/minitest/rails/testing.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">run_tests</span> <span class="ruby-identifier">directories</span>
+  <span class="ruby-identifier">errors</span> = <span class="ruby-identifier">directories</span>.<span class="ruby-identifier">collect</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">task</span> = <span class="ruby-node">&quot;minitest:#{dir}&quot;</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-constant">Rake</span><span class="ruby-operator">::</span><span class="ruby-constant">Task</span>.<span class="ruby-identifier">task_defined?</span> <span class="ruby-identifier">task</span>
+        <span class="ruby-constant">Rake</span><span class="ruby-operator">::</span><span class="ruby-constant">Task</span>[<span class="ruby-identifier">task</span>].<span class="ruby-identifier">invoke</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+      { <span class="ruby-value">:task</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">task</span>, <span class="ruby-value">:exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span> }
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">compact</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">errors</span>.<span class="ruby-identifier">any?</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">errors</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;Errors running #{e[:task]}! #{e[:exception].inspect}&quot;</span> }.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+    <span class="ruby-identifier">abort</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- run_tests-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- run_tests-method -->
 
     
     </section><!-- public-class-method-details -->
-  
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Instance Methods</h3>
-
-    
-      <div id="method-i-copy_minitest_files" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">copy_minitest_files</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="copy_minitest_files-source">
-            <pre><span class="ruby-comment"># File lib/generators/mini_test/install/install_generator.rb, line 16</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">copy_minitest_files</span>
-  <span class="ruby-identifier">template</span> <span class="ruby-string">'test/minitest_helper.rb'</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;test&quot;</span>, <span class="ruby-string">&quot;minitest_helper.rb&quot;</span>)
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- copy_minitest_files-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- copy_minitest_files-method -->
-
-    
-    </section><!-- public-instance-method-details -->
   
   </section><!-- 5Buntitled-5D -->
 

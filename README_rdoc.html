@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>README - minitest-rails-0.2 Documentation</title>
+<title>README - minitest-rails-0.5 Documentation</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -85,35 +85,33 @@
   
     <li><a href="./MiniTest/Rails/ActionController.html">MiniTest::Rails::ActionController</a>
   
-    <li><a href="./MiniTest/Rails/ActionController/ControllerLookup.html">MiniTest::Rails::ActionController::ControllerLookup</a>
-  
-    <li><a href="./MiniTest/Rails/ActionController/TestCase.html">MiniTest::Rails::ActionController::TestCase</a>
+    <li><a href="./ActionController/TestCase.html">MiniTest::Rails::ActionController::TestCase</a>
   
     <li><a href="./MiniTest/Rails/ActionDispatch.html">MiniTest::Rails::ActionDispatch</a>
   
-    <li><a href="./MiniTest/Rails/ActionDispatch/IntegrationTest.html">MiniTest::Rails::ActionDispatch::IntegrationTest</a>
+    <li><a href="./ActionDispatch/IntegrationTest.html">MiniTest::Rails::ActionDispatch::IntegrationTest</a>
   
     <li><a href="./MiniTest/Rails/ActionMailer.html">MiniTest::Rails::ActionMailer</a>
   
-    <li><a href="./MiniTest/Rails/ActionMailer/TestCase.html">MiniTest::Rails::ActionMailer::TestCase</a>
-  
     <li><a href="./MiniTest/Rails/ActionView.html">MiniTest::Rails::ActionView</a>
   
-    <li><a href="./MiniTest/Rails/ActionView/TestCase.html">MiniTest::Rails::ActionView::TestCase</a>
+    <li><a href="./ActionView/TestCase.html">MiniTest::Rails::ActionView::TestCase</a>
   
     <li><a href="./MiniTest/Rails/ActiveSupport.html">MiniTest::Rails::ActiveSupport</a>
   
-    <li><a href="./MiniTest/Rails/ActiveSupport/TestCase.html">MiniTest::Rails::ActiveSupport::TestCase</a>
-  
-    <li><a href="./MiniTest/Rails/ActiveSupport/Testing.html">MiniTest::Rails::ActiveSupport::Testing</a>
-  
-    <li><a href="./MiniTest/Rails/ActiveSupport/Testing/Declarative.html">MiniTest::Rails::ActiveSupport::Testing::Declarative</a>
+    <li><a href="./ActiveSupport/TestCase.html">MiniTest::Rails::ActiveSupport::TestCase</a>
   
     <li><a href="./MiniTest/Rails/Railtie.html">MiniTest::Rails::Railtie</a>
   
     <li><a href="./MiniTest/Rails/Tasks.html">MiniTest::Rails::Tasks</a>
   
     <li><a href="./MiniTest/Rails/Tasks/SubTestTask.html">MiniTest::Rails::Tasks::SubTestTask</a>
+  
+    <li><a href="./MiniTest/Rails/TestCase.html">MiniTest::Rails::TestCase</a>
+  
+    <li><a href="./MiniTest/Rails/Testing.html">MiniTest::Rails::Testing</a>
+  
+    <li><a href="./MiniTest/Rails/Testing/ConstantLookup.html">MiniTest::Rails::Testing::ConstantLookup</a>
   
     <li><a href="./Autotest.html">Autotest</a>
   
@@ -122,6 +120,26 @@
     <li><a href="./Autotest/Migrate.html">Autotest::Migrate</a>
   
     <li><a href="./Autotest/MinitestRails.html">Autotest::MinitestRails</a>
+  
+    <li><a href="./ActionController.html">ActionController</a>
+  
+    <li><a href="./ActionController/TestCase.html">ActionController::TestCase</a>
+  
+    <li><a href="./ActionDispatch.html">ActionDispatch</a>
+  
+    <li><a href="./ActionDispatch/IntegrationTest.html">ActionDispatch::IntegrationTest</a>
+  
+    <li><a href="./ActionMailer.html">ActionMailer</a>
+  
+    <li><a href="./ActionMailer/TestCase.html">ActionMailer::TestCase</a>
+  
+    <li><a href="./ActionView.html">ActionView</a>
+  
+    <li><a href="./ActionView/TestCase.html">ActionView::TestCase</a>
+  
+    <li><a href="./ActiveSupport.html">ActiveSupport</a>
+  
+    <li><a href="./ActiveSupport/TestCase.html">ActiveSupport::TestCase</a>
   
     <li><a href="./Object.html">Object</a>
   
@@ -135,11 +153,13 @@
   
 <h1 id="label-minitest-rails">minitest-rails</h1>
 
-<p><a href="MiniTest.html">MiniTest</a> integration for Rails 3.x</p>
+<p><a href="MiniTest.html">MiniTest</a> integration for Rails 3 and 4</p>
 
 <p><a href="http://travis-ci.org/blowmage/minitest-rails"><img
 src="https://secure.travis-ci.org/blowmage/minitest-rails.png" alt="Build
-Status" /></a></p>
+Status" /></a>&gt; <a
+href="https://codeclimate.com/github/blowmage/minitest-rails"><img
+src="https://codeclimate.com/badge.png" /></a></p>
 
 <h2 id="label-Install">Install</h2>
 
@@ -171,19 +191,17 @@ end</pre>
 
 <h2 id="label-Usage">Usage</h2>
 
-<p>We aim to expose <a href="MiniTest.html">MiniTest</a> with minimal changes
-for testing within Rails. Because of this, we allow Test::Unit and <a
-href="MiniTest.html">MiniTest</a> tests to live side by side. Your test
-classes will inherit from <a
-href="MiniTest/Rails/ActiveSupport/TestCase.html">MiniTest::Rails::ActiveSupport::TestCase</a>
-a opposed to ActiveSupport::TestCase. You can use the MiniTest::Spec DSL.
+<p>This project aims to enable <a href="MiniTest.html">MiniTest</a> within the
+Rails TestCase classes. Your test will continue to inherit from
+<code>ActiveSupport::TestCase</code>, which will now support the spec DSL.
 You can generate test files with the standard model, controller, resource,
 and other generators:</p>
 
 <pre>rails generate model User</pre>
 
-<p>And you can specify generating the tests using the MiniTest::Spec DSL on
-any of the generators by providing the <code>--spec</code> option:</p>
+<p>And you can specify generating the tests using the
+<code>MiniTest::Spec</code> DSL on any of the generators by providing the
+<code>--spec</code> option:</p>
 
 <pre>rails generate model User --spec</pre>
 
@@ -200,37 +218,20 @@ any of the generators by providing the <code>--spec</code> option:</p>
 <span class="ruby-keyword">end</span>
 </pre>
 
-<h2 id="label-Overriding+Test%3A%3AUnit">Overriding Test::Unit</h2>
-
-<p>Of course, you may not want to maintain separate Test::Unit and <a
-href="MiniTest.html">MiniTest</a> tests. If this is the behavior you are
-wanting, simply add the following to your <code>test_helper.rb</code> file:</p>
-
-<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;minitest/rails&quot;</span>
-<span class="ruby-constant">MiniTest</span><span class="ruby-operator">::</span><span class="ruby-constant">Rails</span>.<span class="ruby-identifier">override_testunit!</span>
-</pre>
-
 <h2 id="label-Capybara">Capybara</h2>
 
-<p>You can use Capybara in your acceptance/integration tests by adding
-<code>minitest-rails-capybara</code> as a dependency.</p>
-
-<pre>group :test, :development do
-  gem 'minitest-rails'
-  gem 'minitest-rails-capybara'
-end</pre>
-
-<p>And add the following to your test helper file:</p>
-
-<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;minitest/rails/capybara&quot;</span>
-</pre>
-
-<p>See the <code>minitest-rails-capybara</code> project for more information.</p>
+<p>You can use Capybara for feature tests by adding
+<code>minitest-rails-capybara</code> as a dependency. See the <a
+href="README_rdoc.html">README</a> for more information: <a
+href="https://github.com/blowmage/minitest-rails-capybara">github.com/blowmage/minitest-rails-capybara</a></p>
 
 <h2 id="label-Incompatibilities">Incompatibilities</h2>
 
+<p>Efforts have been made to be compatible with Ruby 1.8.7, but some rough
+edges may remain. You have been warned.</p>
+
 <p>Existing tests that call <code>describe</code> will not work, since
-<code>describe</code> is used by MiniTest::Spec blocks.</p>
+<code>describe</code> is used by <code>MiniTest::Spec</code> blocks.</p>
 
 <h2 id="label-Get+Involved">Get Involved</h2>
 
@@ -241,7 +242,7 @@ href="https://groups.google.com/group/minitest-rails">groups.google.com/group/mi
 
 <h2 id="label-License">License</h2>
 
-<p>Copyright © 2012 Mike Moore</p>
+<p>Copyright © 2013 Mike Moore</p>
 
 <p>Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the “Software”),
