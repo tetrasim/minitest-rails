@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>module MiniTest - minitest-rails-0.9.0 Documentation</title>
+<title>class RouteTest - minitest-rails-0.9.0 Documentation</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -20,7 +20,7 @@
 <script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
 
 
-<body id="top" class="module">
+<body id="top" class="class">
 <nav id="metadata">
   <nav id="home-section" class="section">
   <h3 class="section-header">
@@ -47,21 +47,7 @@
     <nav id="file-list-section" class="section">
   <h3 class="section-header">Defined In</h3>
   <ul>
-    <li>lib/generators/mini_test/controller/controller_generator.rb
-    <li>lib/generators/mini_test/helper/helper_generator.rb
-    <li>lib/generators/mini_test/install/install_generator.rb
-    <li>lib/generators/mini_test/integration/integration_generator.rb
-    <li>lib/generators/mini_test/mailer/mailer_generator.rb
-    <li>lib/generators/mini_test/model/model_generator.rb
-    <li>lib/generators/mini_test/route/route_generator.rb
-    <li>lib/generators/mini_test/scaffold/scaffold_generator.rb
-    <li>lib/generators/mini_test.rb
-    <li>lib/minitest/rails/constant_lookup.rb
-    <li>lib/minitest/rails/railtie.rb
-    <li>lib/minitest/rails/tasks/sub_test_task.rb
-    <li>lib/minitest/rails/testing.rb
-    <li>lib/minitest/rails/version.rb
-    <li>lib/minitest/rails.rb
+    <li>lib/generators/mini_test/route/templates/route_test.rb
   </ul>
 </nav>
 
@@ -70,9 +56,25 @@
 
   <div id="class-metadata">
     
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="ActionDispatch/IntegrationTest.html">ActionDispatch::IntegrationTest</a>
+  
+</nav>
+
     
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
     
+    <li><a href="#method-i-test_root">#test_root</a>
     
+  </ul>
+</nav>
+
   </div>
 
   <div id="project-metadata">
@@ -170,12 +172,13 @@
 </nav>
 
 <div id="documentation">
-  <h1 class="module">module MiniTest</h1>
+  <h1 class="class">class RouteTest</h1>
 
   <div id="description" class="description">
     
-<p>Deprecated, for backwards compatibility with older minitest-rails only Will
-be removed at version 1.0</p>
+<p>Add the following to your Rake file to test routes by default:</p>
+
+<pre>MiniTest::Rails::Testing.default_tasks &lt;&lt; &quot;routes&quot;</pre>
 
   </div><!-- description -->
 
@@ -193,6 +196,42 @@ be removed at version 1.0</p>
 
     <!-- Methods -->
     
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-test_root" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_root</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_root-source">
+            <pre><span class="ruby-comment"># File lib/generators/mini_test/route/templates/route_test.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_root</span>
+  <span class="ruby-identifier">assert_routing</span> <span class="ruby-string">&quot;/&quot;</span>, <span class="ruby-identifier">class</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;home&quot;</span>, <span class="ruby-identifier">action</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;show&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- test_root-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- test_root-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
   </section><!-- 5Buntitled-5D -->
 
 </div><!-- documentation -->

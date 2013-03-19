@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>minitest-rails-0.5 Documentation</title>
+<title>minitest-rails-0.9.0 Documentation</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -79,35 +79,17 @@
   
     <li><a href="./MiniTest/Generators/ModelGenerator.html">MiniTest::Generators::ModelGenerator</a>
   
+    <li><a href="./MiniTest/Generators/RouteGenerator.html">MiniTest::Generators::RouteGenerator</a>
+  
     <li><a href="./MiniTest/Generators/ScaffoldGenerator.html">MiniTest::Generators::ScaffoldGenerator</a>
   
     <li><a href="./MiniTest/Rails.html">MiniTest::Rails</a>
-  
-    <li><a href="./MiniTest/Rails/ActionController.html">MiniTest::Rails::ActionController</a>
-  
-    <li><a href="./ActionController/TestCase.html">MiniTest::Rails::ActionController::TestCase</a>
-  
-    <li><a href="./MiniTest/Rails/ActionDispatch.html">MiniTest::Rails::ActionDispatch</a>
-  
-    <li><a href="./ActionDispatch/IntegrationTest.html">MiniTest::Rails::ActionDispatch::IntegrationTest</a>
-  
-    <li><a href="./MiniTest/Rails/ActionMailer.html">MiniTest::Rails::ActionMailer</a>
-  
-    <li><a href="./MiniTest/Rails/ActionView.html">MiniTest::Rails::ActionView</a>
-  
-    <li><a href="./ActionView/TestCase.html">MiniTest::Rails::ActionView::TestCase</a>
-  
-    <li><a href="./MiniTest/Rails/ActiveSupport.html">MiniTest::Rails::ActiveSupport</a>
-  
-    <li><a href="./ActiveSupport/TestCase.html">MiniTest::Rails::ActiveSupport::TestCase</a>
   
     <li><a href="./MiniTest/Rails/Railtie.html">MiniTest::Rails::Railtie</a>
   
     <li><a href="./MiniTest/Rails/Tasks.html">MiniTest::Rails::Tasks</a>
   
     <li><a href="./MiniTest/Rails/Tasks/SubTestTask.html">MiniTest::Rails::Tasks::SubTestTask</a>
-  
-    <li><a href="./MiniTest/Rails/TestCase.html">MiniTest::Rails::TestCase</a>
   
     <li><a href="./MiniTest/Rails/Testing.html">MiniTest::Rails::Testing</a>
   
@@ -120,6 +102,12 @@
     <li><a href="./Autotest/Migrate.html">Autotest::Migrate</a>
   
     <li><a href="./Autotest/MinitestRails.html">Autotest::MinitestRails</a>
+  
+    <li><a href="./ActiveSupport.html">ActiveSupport</a>
+  
+    <li><a href="./ActiveSupport/TestCase.html">ActiveSupport::TestCase</a>
+  
+    <li><a href="./ActiveSupport/TestCase.html">ActiveSupport::TestCase</a>
   
     <li><a href="./ActionController.html">ActionController</a>
   
@@ -137,11 +125,11 @@
   
     <li><a href="./ActionView/TestCase.html">ActionView::TestCase</a>
   
-    <li><a href="./ActiveSupport.html">ActiveSupport</a>
-  
-    <li><a href="./ActiveSupport/TestCase.html">ActiveSupport::TestCase</a>
-  
     <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./ActiveSupport/TestCase.html">Object::TestCase</a>
+  
+    <li><a href="./RouteTest.html">RouteTest</a>
   
   </ul>
 </nav>
@@ -157,7 +145,7 @@
 
 <p><a href="http://travis-ci.org/blowmage/minitest-rails"><img
 src="https://secure.travis-ci.org/blowmage/minitest-rails.png" alt="Build
-Status" /></a>&gt; <a
+Status" /></a> <a
 href="https://codeclimate.com/github/blowmage/minitest-rails"><img
 src="https://codeclimate.com/badge.png" /></a></p>
 
@@ -175,27 +163,24 @@ src="https://codeclimate.com/badge.png" /></a></p>
 
 <pre>rails new MyApp --skip-test-unit</pre>
 
-<p>Add <code>minitest-rails</code> to the <code>:test</code> and
-<code>:development</code> groups in Gemfile:</p>
+<p>Add <code>minitest-rails</code> to the Gemfile:</p>
 
-<pre>group :test, :development do
-  gem 'minitest-rails'
-end</pre>
+<pre>gem &quot;minitest-rails&quot;</pre>
 
 <p>Next run the installation generator with the following:</p>
 
 <pre>rails generate mini_test:install</pre>
 
-<p>This will add the <code>minitest_helper.rb</code> file to the
-<code>test</code> directory.</p>
+<p>This will add the <code>test_helper.rb</code> file to the <code>test</code>
+directory.</p>
 
 <h2 id="label-Usage">Usage</h2>
 
 <p>This project aims to enable <a href="MiniTest.html">MiniTest</a> within the
-Rails TestCase classes. Your test will continue to inherit from
-<code>ActiveSupport::TestCase</code>, which will now support the spec DSL.
-You can generate test files with the standard model, controller, resource,
-and other generators:</p>
+Rails <a href="ActiveSupport/TestCase.html">TestCase</a> classes. Your test
+will continue to inherit from <code>ActiveSupport::TestCase</code>, which
+will now support the spec DSL. You can generate test files with the
+standard model, controller, resource, and other generators:</p>
 
 <pre>rails generate model User</pre>
 
@@ -224,6 +209,13 @@ and other generators:</p>
 <code>minitest-rails-capybara</code> as a dependency. See the <a
 href="README_rdoc.html">README</a> for more information: <a
 href="https://github.com/blowmage/minitest-rails-capybara">github.com/blowmage/minitest-rails-capybara</a></p>
+
+<h2 id="label-Upgrading">Upgrading</h2>
+
+<p>The 0.9 release marks a new direction for minitest-rails. Deprecations have
+been added for the features that won’t make it to 1.0. See instructions for
+upgrading to 0.9: <a
+href="https://github.com/blowmage/minitest-rails/wiki/Upgrading-to-0.9">github.com/blowmage/minitest-rails/wiki/Upgrading-to-0.9</a></p>
 
 <h2 id="label-Incompatibilities">Incompatibilities</h2>
 
@@ -267,7 +259,7 @@ DEALINGS IN THE SOFTWARE.</p>
 
 <footer id="validator-badges">
   <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
   <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
 </footer>
 

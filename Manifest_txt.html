@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>Manifest - minitest-rails-0.5 Documentation</title>
+<title>Manifest - minitest-rails-0.9.0 Documentation</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -79,35 +79,17 @@
   
     <li><a href="./MiniTest/Generators/ModelGenerator.html">MiniTest::Generators::ModelGenerator</a>
   
+    <li><a href="./MiniTest/Generators/RouteGenerator.html">MiniTest::Generators::RouteGenerator</a>
+  
     <li><a href="./MiniTest/Generators/ScaffoldGenerator.html">MiniTest::Generators::ScaffoldGenerator</a>
   
     <li><a href="./MiniTest/Rails.html">MiniTest::Rails</a>
-  
-    <li><a href="./MiniTest/Rails/ActionController.html">MiniTest::Rails::ActionController</a>
-  
-    <li><a href="./ActionController/TestCase.html">MiniTest::Rails::ActionController::TestCase</a>
-  
-    <li><a href="./MiniTest/Rails/ActionDispatch.html">MiniTest::Rails::ActionDispatch</a>
-  
-    <li><a href="./ActionDispatch/IntegrationTest.html">MiniTest::Rails::ActionDispatch::IntegrationTest</a>
-  
-    <li><a href="./MiniTest/Rails/ActionMailer.html">MiniTest::Rails::ActionMailer</a>
-  
-    <li><a href="./MiniTest/Rails/ActionView.html">MiniTest::Rails::ActionView</a>
-  
-    <li><a href="./ActionView/TestCase.html">MiniTest::Rails::ActionView::TestCase</a>
-  
-    <li><a href="./MiniTest/Rails/ActiveSupport.html">MiniTest::Rails::ActiveSupport</a>
-  
-    <li><a href="./ActiveSupport/TestCase.html">MiniTest::Rails::ActiveSupport::TestCase</a>
   
     <li><a href="./MiniTest/Rails/Railtie.html">MiniTest::Rails::Railtie</a>
   
     <li><a href="./MiniTest/Rails/Tasks.html">MiniTest::Rails::Tasks</a>
   
     <li><a href="./MiniTest/Rails/Tasks/SubTestTask.html">MiniTest::Rails::Tasks::SubTestTask</a>
-  
-    <li><a href="./MiniTest/Rails/TestCase.html">MiniTest::Rails::TestCase</a>
   
     <li><a href="./MiniTest/Rails/Testing.html">MiniTest::Rails::Testing</a>
   
@@ -120,6 +102,12 @@
     <li><a href="./Autotest/Migrate.html">Autotest::Migrate</a>
   
     <li><a href="./Autotest/MinitestRails.html">Autotest::MinitestRails</a>
+  
+    <li><a href="./ActiveSupport.html">ActiveSupport</a>
+  
+    <li><a href="./ActiveSupport/TestCase.html">ActiveSupport::TestCase</a>
+  
+    <li><a href="./ActiveSupport/TestCase.html">ActiveSupport::TestCase</a>
   
     <li><a href="./ActionController.html">ActionController</a>
   
@@ -137,11 +125,11 @@
   
     <li><a href="./ActionView/TestCase.html">ActionView::TestCase</a>
   
-    <li><a href="./ActiveSupport.html">ActiveSupport</a>
-  
-    <li><a href="./ActiveSupport/TestCase.html">ActiveSupport::TestCase</a>
-  
     <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./ActiveSupport/TestCase.html">Object::TestCase</a>
+  
+    <li><a href="./RouteTest.html">RouteTest</a>
   
   </ul>
 </nav>
@@ -167,7 +155,7 @@ lib/generators/mini_test/helper/helper_generator.rb
 lib/generators/mini_test/helper/templates/helper_spec.rb
 lib/generators/mini_test/helper/templates/helper_test.rb
 lib/generators/mini_test/install/install_generator.rb
-lib/generators/mini_test/install/templates/test/minitest_helper.rb
+lib/generators/mini_test/install/templates/test_helper.rb
 lib/generators/mini_test/integration/integration_generator.rb
 lib/generators/mini_test/integration/templates/integration_spec.rb
 lib/generators/mini_test/integration/templates/integration_test.rb
@@ -178,20 +166,28 @@ lib/generators/mini_test/model/model_generator.rb
 lib/generators/mini_test/model/templates/fixtures.yml
 lib/generators/mini_test/model/templates/model_spec.rb
 lib/generators/mini_test/model/templates/model_test.rb
+lib/generators/mini_test/route/route_generator.rb
+lib/generators/mini_test/route/templates/route_spec.rb
+lib/generators/mini_test/route/templates/route_test.rb
 lib/generators/mini_test/scaffold/scaffold_generator.rb
 lib/generators/mini_test/scaffold/templates/controller_spec.rb
 lib/generators/mini_test/scaffold/templates/controller_test.rb
 lib/minitest-rails.rb lib/minitest/rails.rb
 lib/minitest/rails/constant_lookup.rb
-lib/minitest/rails/tasks/minitest.rake
-lib/minitest/rails/tasks/sub_test_task.rb lib/minitest/rails/test_case.rb
-lib/minitest/rails/testing.rb lib/minitest/rails/version.rb
-minitest-rails.gemspec tasks/gemfiles.rake tasks/test.rake
-test/generators/test_controller_generator.rb
+lib/minitest/rails/deprecated/action_controller.rb
+lib/minitest/rails/deprecated/action_dispatch.rb
+lib/minitest/rails/deprecated/action_mailer.rb
+lib/minitest/rails/deprecated/action_view.rb
+lib/minitest/rails/deprecated/active_support.rb
+lib/minitest/rails/railtie.rb lib/minitest/rails/tasks/minitest.rake
+lib/minitest/rails/tasks/sub_test_task.rb lib/minitest/rails/testing.rb
+lib/minitest/rails/version.rb minitest-rails.gemspec tasks/gemfiles.rake
+tasks/test.rake test/generators/test_controller_generator.rb
 test/generators/test_helper_generator.rb
 test/generators/test_install_generator.rb
 test/generators/test_mailer_generator.rb
 test/generators/test_model_generator.rb
+test/generators/test_route_generator.rb
 test/generators/test_scaffold_generator.rb test/helper.rb
 test/rails/action_controller/test_controllers.rb
 test/rails/action_controller/test_spec_type.rb
@@ -209,7 +205,7 @@ test/rails/test_constant_lookup.rb test/test_sanity.rb</p>
 
 <footer id="validator-badges">
   <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
   <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
 </footer>
 
