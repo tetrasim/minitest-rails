@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module MiniTest::Rails::Expectations - minitest-rails-0.9.2 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/minitest/rails/expectations.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li ><a href="#method-i-must_be_blank">#must_be_blank</a>
+    
+    <li ><a href="#method-i-must_be_present">#must_be_present</a>
+    
+    <li ><a href="#method-i-must_change">#must_change</a>
+    
+    <li ><a href="#method-i-wont_be_blank">#wont_be_blank</a>
+    
+    <li ><a href="#method-i-wont_be_present">#wont_be_present</a>
+    
+    <li ><a href="#method-i-wont_change">#wont_change</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../CHANGELOG_rdoc.html">CHANGELOG</a>
+  
+    <li class="file"><a href="../../Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="../../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../ActionController.html">ActionController</a>
+  
+    <li><a href="../../ActionController/TestCase.html">ActionController::TestCase</a>
+  
+    <li><a href="../../ActionDispatch.html">ActionDispatch</a>
+  
+    <li><a href="../../ActionDispatch/IntegrationTest.html">ActionDispatch::IntegrationTest</a>
+  
+    <li><a href="../../ActionMailer.html">ActionMailer</a>
+  
+    <li><a href="../../ActionMailer/TestCase.html">ActionMailer::TestCase</a>
+  
+    <li><a href="../../ActionView.html">ActionView</a>
+  
+    <li><a href="../../ActionView/TestCase.html">ActionView::TestCase</a>
+  
+    <li><a href="../../ActiveRecord.html">ActiveRecord</a>
+  
+    <li><a href="../../ActiveSupport.html">ActiveSupport</a>
+  
+    <li><a href="../../ActiveSupport/TestCase.html">ActiveSupport::TestCase</a>
+  
+    <li><a href="../../MiniTest/Rails/Expectations.html">MiniTest::Rails::Expectations</a>
+  
+    <li><a href="../../MiniTest/Rails/Testing.html">MiniTest::Rails::Testing</a>
+  
+    <li><a href="../../MiniTest/Rails/Testing/ConstantLookup.html">MiniTest::Rails::Testing::ConstantLookup</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module MiniTest::Rails::Expectations</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-must_be_blank" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">must_be_blank</span><span
+            class="method-args">(message = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks if an expression is blank. Passes if actual.blank? is true.</p>
+
+<pre>&quot;&quot;.must_be_blank
+nil.must_be_blank
+[].must_be_blank
+{}.must_be_blank</pre>
+
+<p>See also <a
+href="../../ActiveSupport/TestCase.html#method-i-assert_blank">ActiveSupport::TestCase#assert_blank</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="must_be_blank-source">
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 19</span>
+<span class="ruby-identifier">infect_an_assertion</span> <span class="ruby-value">:assert_blank</span>, <span class="ruby-value">:must_be_blank</span>, <span class="ruby-value">:unary</span>
+</pre>
+          </div><!-- must_be_blank-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- must_be_blank-method -->
+
+    
+      <div id="method-i-must_be_present" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">must_be_present</span><span
+            class="method-args">(message = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks if an expression is present. Passes if actual.present? is true.</p>
+
+<pre class="ruby"><span class="ruby-string">&quot;here&quot;</span>.<span class="ruby-identifier">must_be_present</span>
+<span class="ruby-constant">Object</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">must_be_present</span>
+[<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>].<span class="ruby-identifier">must_be_present</span>
+{:<span class="ruby-identifier">key</span> =<span class="ruby-operator">&gt;</span> :<span class="ruby-identifier">value</span>}.<span class="ruby-identifier">must_be_present</span>
+</pre>
+
+<p>See also <a
+href="../../ActiveSupport/TestCase.html#method-i-assert_present">ActiveSupport::TestCase#assert_present</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="must_be_present-source">
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 47</span>
+<span class="ruby-identifier">infect_an_assertion</span> <span class="ruby-value">:assert_present</span>, <span class="ruby-value">:must_be_present</span>, <span class="ruby-value">:unary</span>
+</pre>
+          </div><!-- must_be_present-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- must_be_present-method -->
+
+    
+      <div id="method-i-must_change" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">must_change</span><span
+            class="method-args">(expression, difference = 1, message = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks the numeric difference between the return value of an expression as
+a result of what is evaluated.</p>
+
+<pre>lambda { User.create password: &quot;valid&quot; }.must_change &quot;User.count&quot;
+lambda { 3.times do
+       User.create password: &quot;valid&quot;
+     end }.must_change &quot;User.count&quot;, 3</pre>
+
+<p>See also <a
+href="../../ActiveSupport/TestCase.html#method-i-assert_difference">ActiveSupport::TestCase#assert_difference</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="must_change-source">
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 75</span>
+<span class="ruby-identifier">infect_an_assertion</span> <span class="ruby-value">:assert_difference</span>, <span class="ruby-value">:must_change</span>
+</pre>
+          </div><!-- must_change-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- must_change-method -->
+
+    
+      <div id="method-i-wont_be_blank" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">wont_be_blank</span><span
+            class="method-args">(message = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks if an expression is not blank. Passes if actual.blank? is false.</p>
+
+<pre class="ruby"><span class="ruby-string">&quot;here&quot;</span>.<span class="ruby-identifier">wont_be_blank</span>
+<span class="ruby-constant">Object</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">wont_be_blank</span>
+[<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>].<span class="ruby-identifier">wont_be_blank</span>
+{:<span class="ruby-identifier">key</span> =<span class="ruby-operator">&gt;</span> :<span class="ruby-identifier">value</span>}.<span class="ruby-identifier">wont_be_blank</span>
+</pre>
+
+<p>See also <a
+href="../../ActiveSupport/TestCase.html#method-i-refute_blank">ActiveSupport::TestCase#refute_blank</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="wont_be_blank-source">
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 61</span>
+<span class="ruby-identifier">infect_an_assertion</span> <span class="ruby-value">:refute_blank</span>, <span class="ruby-value">:wont_be_blank</span>, <span class="ruby-value">:unary</span>
+</pre>
+          </div><!-- wont_be_blank-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- wont_be_blank-method -->
+
+    
+      <div id="method-i-wont_be_present" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">wont_be_present</span><span
+            class="method-args">(message = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks if an expression is not present. Passes if actual.present? is false.</p>
+
+<pre>&quot;&quot;.wont_be_present
+nil.wont_be_present
+[].wont_be_present
+{}.wont_be_present</pre>
+
+<p>See also <a
+href="../../ActiveSupport/TestCase.html#method-i-refute_present">ActiveSupport::TestCase#refute_present</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="wont_be_present-source">
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 33</span>
+<span class="ruby-identifier">infect_an_assertion</span> <span class="ruby-value">:refute_present</span>, <span class="ruby-value">:wont_be_present</span>, <span class="ruby-value">:unary</span>
+</pre>
+          </div><!-- wont_be_present-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- wont_be_present-method -->
+
+    
+      <div id="method-i-wont_change" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">wont_change</span><span
+            class="method-args">(expression, message = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks that the numeric result of evaluating an expression is not changed
+before and after invoking.</p>
+
+<pre>lambda { User.new }.wont_change &quot;User.count&quot;</pre>
+
+<p>See also <a
+href="../../ActiveSupport/TestCase.html#method-i-refute_difference">ActiveSupport::TestCase#refute_difference</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="wont_change-source">
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 86</span>
+<span class="ruby-identifier">infect_an_assertion</span> <span class="ruby-value">:refute_difference</span>, <span class="ruby-value">:wont_change</span>
+</pre>
+          </div><!-- wont_change-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- wont_change-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

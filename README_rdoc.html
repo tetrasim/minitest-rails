@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>README - minitest-rails-0.9.0 Documentation</title>
+<title>README - minitest-rails-0.9.2 Documentation</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -43,6 +43,26 @@
 </nav>
 
 
+  
+<div id="table-of-contents">
+  <nav class="section">
+    <h3 class="section-header">Table of Contents</h3>
+    <ul>
+      <li><a href="#label-minitest-rails">minitest-rails</a>
+      <li><a href="#label-Install">Install</a>
+      <li><a href="#label-Configure">Configure</a>
+      <li><a href="#label-Usage">Usage</a>
+      <li><a href="#label-Running+on+Ruby+1.8">Running on Ruby 1.8</a>
+      <li><a href="#label-Capybara">Capybara</a>
+      <li><a href="#label-Upgrading">Upgrading</a>
+      <li><a href="#label-Incompatibilities">Incompatibilities</a>
+      <li><a href="#label-Get+Involved">Get Involved</a>
+      <li><a href="#label-License">License</a>
+    </ul>
+  </nav>
+</div>
+
+
   <div id="project-metadata">
     <nav id="fileindex-section" class="section project-section">
   <h3 class="section-header">Pages</h3>
@@ -63,52 +83,6 @@
 
   <ul class="link-list">
   
-    <li><a href="./MiniTest.html">MiniTest</a>
-  
-    <li><a href="./MiniTest/Generators.html">MiniTest::Generators</a>
-  
-    <li><a href="./MiniTest/Generators/ControllerGenerator.html">MiniTest::Generators::ControllerGenerator</a>
-  
-    <li><a href="./MiniTest/Generators/HelperGenerator.html">MiniTest::Generators::HelperGenerator</a>
-  
-    <li><a href="./MiniTest/Generators/InstallGenerator.html">MiniTest::Generators::InstallGenerator</a>
-  
-    <li><a href="./MiniTest/Generators/IntegrationGenerator.html">MiniTest::Generators::IntegrationGenerator</a>
-  
-    <li><a href="./MiniTest/Generators/MailerGenerator.html">MiniTest::Generators::MailerGenerator</a>
-  
-    <li><a href="./MiniTest/Generators/ModelGenerator.html">MiniTest::Generators::ModelGenerator</a>
-  
-    <li><a href="./MiniTest/Generators/RouteGenerator.html">MiniTest::Generators::RouteGenerator</a>
-  
-    <li><a href="./MiniTest/Generators/ScaffoldGenerator.html">MiniTest::Generators::ScaffoldGenerator</a>
-  
-    <li><a href="./MiniTest/Rails.html">MiniTest::Rails</a>
-  
-    <li><a href="./MiniTest/Rails/Railtie.html">MiniTest::Rails::Railtie</a>
-  
-    <li><a href="./MiniTest/Rails/Tasks.html">MiniTest::Rails::Tasks</a>
-  
-    <li><a href="./MiniTest/Rails/Tasks/SubTestTask.html">MiniTest::Rails::Tasks::SubTestTask</a>
-  
-    <li><a href="./MiniTest/Rails/Testing.html">MiniTest::Rails::Testing</a>
-  
-    <li><a href="./MiniTest/Rails/Testing/ConstantLookup.html">MiniTest::Rails::Testing::ConstantLookup</a>
-  
-    <li><a href="./Autotest.html">Autotest</a>
-  
-    <li><a href="./Autotest/Fixtures.html">Autotest::Fixtures</a>
-  
-    <li><a href="./Autotest/Migrate.html">Autotest::Migrate</a>
-  
-    <li><a href="./Autotest/MinitestRails.html">Autotest::MinitestRails</a>
-  
-    <li><a href="./ActiveSupport.html">ActiveSupport</a>
-  
-    <li><a href="./ActiveSupport/TestCase.html">ActiveSupport::TestCase</a>
-  
-    <li><a href="./ActiveSupport/TestCase.html">ActiveSupport::TestCase</a>
-  
     <li><a href="./ActionController.html">ActionController</a>
   
     <li><a href="./ActionController/TestCase.html">ActionController::TestCase</a>
@@ -125,11 +99,17 @@
   
     <li><a href="./ActionView/TestCase.html">ActionView::TestCase</a>
   
-    <li><a href="./Object.html">Object</a>
+    <li><a href="./ActiveRecord.html">ActiveRecord</a>
   
-    <li><a href="./ActiveSupport/TestCase.html">Object::TestCase</a>
+    <li><a href="./ActiveSupport.html">ActiveSupport</a>
   
-    <li><a href="./RouteTest.html">RouteTest</a>
+    <li><a href="./ActiveSupport/TestCase.html">ActiveSupport::TestCase</a>
+  
+    <li><a href="./MiniTest/Rails/Expectations.html">MiniTest::Rails::Expectations</a>
+  
+    <li><a href="./MiniTest/Rails/Testing.html">MiniTest::Rails::Testing</a>
+  
+    <li><a href="./MiniTest/Rails/Testing/ConstantLookup.html">MiniTest::Rails::Testing::ConstantLookup</a>
   
   </ul>
 </nav>
@@ -139,17 +119,17 @@
 
 <div id="documentation" class="description">
   
-<h1 id="label-minitest-rails">minitest-rails</h1>
+<h1 id="label-minitest-rails">minitest-rails<span><a href="#label-minitest-rails">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
 
-<p><a href="MiniTest.html">MiniTest</a> integration for Rails 3 and 4</p>
+<p>MiniTest integration for Rails 3 and 4</p>
 
 <p><a href="http://travis-ci.org/blowmage/minitest-rails"><img
 src="https://secure.travis-ci.org/blowmage/minitest-rails.png" alt="Build
 Status" /></a> <a
 href="https://codeclimate.com/github/blowmage/minitest-rails"><img
-src="https://codeclimate.com/badge.png" /></a></p>
+src="https://codeclimate.com/github/blowmage/minitest-rails.png" /></a></p>
 
-<h2 id="label-Install">Install</h2>
+<h2 id="label-Install">Install<span><a href="#label-Install">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
 <pre>gem install minitest-rails</pre>
 
@@ -157,7 +137,7 @@ src="https://codeclimate.com/badge.png" /></a></p>
 
 <pre>minitest</pre>
 
-<h2 id="label-Configure">Configure</h2>
+<h2 id="label-Configure">Configure<span><a href="#label-Configure">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
 <p>Create a new rails app without Test::Unit:</p>
 
@@ -174,13 +154,13 @@ src="https://codeclimate.com/badge.png" /></a></p>
 <p>This will add the <code>test_helper.rb</code> file to the <code>test</code>
 directory.</p>
 
-<h2 id="label-Usage">Usage</h2>
+<h2 id="label-Usage">Usage<span><a href="#label-Usage">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
-<p>This project aims to enable <a href="MiniTest.html">MiniTest</a> within the
-Rails <a href="ActiveSupport/TestCase.html">TestCase</a> classes. Your test
-will continue to inherit from <code>ActiveSupport::TestCase</code>, which
-will now support the spec DSL. You can generate test files with the
-standard model, controller, resource, and other generators:</p>
+<p>This project aims to enable MiniTest within the Rails TestCase classes.
+Your test will continue to inherit from
+<code>ActiveSupport::TestCase</code>, which will now support the spec DSL.
+You can generate test files with the standard model, controller, resource,
+and other generators:</p>
 
 <pre>rails generate model User</pre>
 
@@ -203,36 +183,64 @@ standard model, controller, resource, and other generators:</p>
 <span class="ruby-keyword">end</span>
 </pre>
 
-<h2 id="label-Capybara">Capybara</h2>
+<p>To run your tests, minitest-rails provides multiple rake tasks by default,
+for a complete list, simply run <code>rake -T</code>.</p>
+
+<p>You can also add any directories under <code>test/</code> and
+minitest-rails will automatically create the associated rake task for it.
+So let say you add a <code>test/api/</code> directory, <code>rake
+minitest:api</code> will automagically be available.</p>
+
+<p>If you want to automatically run <code>rake minitest:api</code> when you
+call <code>rake minitest</code>, add this line to a new .rake file under
+<code>lib/tasks/</code>:</p>
+
+<pre>MiniTest::Rails::Testing.default_tasks &lt;&lt; &#39;api&#39;</pre>
+
+<h2 id="label-Running+on+Ruby+1.8">Running on Ruby 1.8<span><a href="#label-Running+on+Ruby+1.8">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>Efforts have been made to be compatible with Ruby 1.8.7, but some rough
+edges may remain. For the latest information on 1.8 compatibility see the
+wiki: <a
+href="https://github.com/blowmage/minitest-rails/wiki/Running-on-1.8">github.com/blowmage/minitest-rails/wiki/Running-on-1.8</a></p>
+
+<h2 id="label-Capybara">Capybara<span><a href="#label-Capybara">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
 <p>You can use Capybara for feature tests by adding
 <code>minitest-rails-capybara</code> as a dependency. See the <a
 href="README_rdoc.html">README</a> for more information: <a
 href="https://github.com/blowmage/minitest-rails-capybara">github.com/blowmage/minitest-rails-capybara</a></p>
 
-<h2 id="label-Upgrading">Upgrading</h2>
+<h2 id="label-Upgrading">Upgrading<span><a href="#label-Upgrading">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
 <p>The 0.9 release marks a new direction for minitest-rails. Deprecations have
-been added for the features that won’t make it to 1.0. See instructions for
-upgrading to 0.9: <a
+been added for the features that won&#39;t make it to 1.0. See instructions
+for upgrading to 0.9: <a
 href="https://github.com/blowmage/minitest-rails/wiki/Upgrading-to-0.9">github.com/blowmage/minitest-rails/wiki/Upgrading-to-0.9</a></p>
 
-<h2 id="label-Incompatibilities">Incompatibilities</h2>
-
-<p>Efforts have been made to be compatible with Ruby 1.8.7, but some rough
-edges may remain. You have been warned.</p>
+<h2 id="label-Incompatibilities">Incompatibilities<span><a href="#label-Incompatibilities">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
 <p>Existing tests that call <code>describe</code> will not work, since
 <code>describe</code> is used by <code>MiniTest::Spec</code> blocks.</p>
 
-<h2 id="label-Get+Involved">Get Involved</h2>
+<p>RSpec and minitest&#39;s spec DSL are incompatible and cannot both be
+loaded at the same time. If your tests using the spec DSL are not running
+it is likely the RSpec DSL is also loaded. Check the dependencies and make
+sure RSpec is only loaded when running the specs.</p>
+
+<p>If you need to use some RSpec features with minitest-rails require only the
+needed gems. e.g. To use RSpec mocks with minitest-rails require the
+“rspec-mocks” gem only, and not the main “rspec” gem which activates the
+RSpec DSL.</p>
+
+<h2 id="label-Get+Involved">Get Involved<span><a href="#label-Get+Involved">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
 <p>Join the mailing list to get help or offer suggestions.</p>
 
 <p><a
 href="https://groups.google.com/group/minitest-rails">groups.google.com/group/minitest-rails</a></p>
 
-<h2 id="label-License">License</h2>
+<h2 id="label-License">License<span><a href="#label-License">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
 <p>Copyright © 2013 Mike Moore</p>
 
@@ -260,7 +268,7 @@ DEALINGS IN THE SOFTWARE.</p>
 
 <footer id="validator-badges">
   <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
   <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
 </footer>
 
