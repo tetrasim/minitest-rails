@@ -1,17 +1,12 @@
-Tue, 25 Jun 2013 14:32:08 -0600
-lib/minitest/rails/assertions.rb	Tue, 25 Jun 2013 14:29:30 -0600
-lib/minitest/rails/constant_lookup.rb	Tue, 25 Jun 2013 14:29:30 -0600
-lib/minitest/rails/deprecated/action_controller.rb	Tue, 25 Jun 2013 14:29:30 -0600
-lib/minitest/rails/deprecated/action_dispatch.rb	Tue, 25 Jun 2013 14:29:30 -0600
-lib/minitest/rails/deprecated/action_mailer.rb	Tue, 25 Jun 2013 14:29:30 -0600
-lib/minitest/rails/deprecated/action_view.rb	Tue, 25 Jun 2013 14:29:30 -0600
-lib/minitest/rails/deprecated/active_support.rb	Tue, 25 Jun 2013 14:29:30 -0600
-lib/minitest/rails/expectations.rb	Tue, 25 Jun 2013 14:29:30 -0600
-lib/minitest/rails/railtie.rb	Tue, 25 Jun 2013 14:29:30 -0600
-lib/minitest/rails/testing.rb	Tue, 25 Jun 2013 14:29:30 -0600
-lib/minitest/rails/version.rb	Tue, 25 Jun 2013 14:29:30 -0600
-lib/minitest/rails.rb	Tue, 25 Jun 2013 14:29:30 -0600
-lib/minitest-rails.rb	Tue, 25 Jun 2013 14:29:30 -0600
-CHANGELOG.rdoc	Tue, 25 Jun 2013 14:29:30 -0600
-Manifest.txt	Tue, 25 Jun 2013 14:29:30 -0600
-README.rdoc	Tue, 25 Jun 2013 14:29:30 -0600
+Mon, 14 Apr 2014 19:15:37 -0600
+lib/minitest/rails/assertions.rb	Mon, 14 Apr 2014 19:01:34 -0600
+lib/minitest/rails/constant_lookup.rb	Mon, 14 Apr 2014 19:01:34 -0600
+lib/minitest/rails/expectations.rb	Mon, 14 Apr 2014 19:01:34 -0600
+lib/minitest/rails/railtie.rb	Mon, 14 Apr 2014 19:01:34 -0600
+lib/minitest/rails/testing.rb	Mon, 14 Apr 2014 19:01:34 -0600
+lib/minitest/rails/version.rb	Mon, 14 Apr 2014 19:01:34 -0600
+lib/minitest/rails.rb	Mon, 14 Apr 2014 19:01:34 -0600
+lib/minitest-rails.rb	Tue, 25 Jun 2013 15:00:29 -0600
+CHANGELOG.rdoc	Mon, 14 Apr 2014 19:06:30 -0600
+Manifest.txt	Mon, 14 Apr 2014 19:01:34 -0600
+README.rdoc	Mon, 14 Apr 2014 19:01:34 -0600

@@ -2,59 +2,58 @@
 
 <html>
 <head>
-<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="UTF-8">
 
-<title>module MiniTest::Rails::Expectations - minitest-rails-0.9.2 Documentation</title>
+<title>module Minitest::Rails::Expectations - minitest-rails-2.0.0.beta1 Documentation</title>
 
-<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+<link href="../../fonts.css" rel="stylesheet">
+<link href="../../rdoc.css" rel="stylesheet">
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
 </script>
 
-<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+<script src="../../js/jquery.js"></script>
+<script src="../../js/navigation.js"></script>
+<script src="../../js/search_index.js"></script>
+<script src="../../js/search.js"></script>
+<script src="../../js/searcher.js"></script>
+<script src="../../js/darkfish.js"></script>
 
 
-<body id="top" class="module">
-<nav id="metadata">
-  <nav id="home-section" class="section">
-  <h3 class="section-header">
-    <a href="../../index.html">Home</a>
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
     <a href="../../table_of_contents.html#classes">Classes</a>
     <a href="../../table_of_contents.html#methods">Methods</a>
-  </h3>
-</nav>
+  </div>
+</div>
 
-
-  <nav id="search-section" class="section project-section" class="initially-hidden">
+    <div id="search-section" role="search" class="project-section initially-hidden">
   <form action="#" method="get" accept-charset="utf-8">
-    <h3 class="section-header">
-      <input type="text" name="search" placeholder="Search" id="search-field"
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
              title="Type to search, Up and Down to navigate, Enter to load">
-    </h3>
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
   </form>
+</div>
 
-  <ul id="search-results" class="initially-hidden"></ul>
-</nav>
-
+  </div>
 
   
-
-  <div id="file-metadata">
-    <nav id="file-list-section" class="section">
-  <h3 class="section-header">Defined In</h3>
-  <ul>
-    <li>lib/minitest/rails/expectations.rb
-  </ul>
-</nav>
-
-    
-  </div>
 
   <div id="class-metadata">
     
@@ -62,88 +61,53 @@
     
     
     <!-- Method Quickref -->
-<nav id="method-list-section" class="section">
-  <h3 class="section-header">Methods</h3>
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
 
-  <ul class="link-list">
-    
-    <li ><a href="#method-i-must_be_blank">#must_be_blank</a>
-    
-    <li ><a href="#method-i-must_be_present">#must_be_present</a>
+  <ul class="link-list" role="directory">
     
     <li ><a href="#method-i-must_change">#must_change</a>
     
-    <li ><a href="#method-i-wont_be_blank">#wont_be_blank</a>
+    <li ><a href="#method-i-must_dom_equal">#must_dom_equal</a>
     
-    <li ><a href="#method-i-wont_be_present">#wont_be_present</a>
+    <li ><a href="#method-i-must_have_tag">#must_have_tag</a>
+    
+    <li ><a href="#method-i-must_redirect_to">#must_redirect_to</a>
+    
+    <li ><a href="#method-i-must_render_template">#must_render_template</a>
+    
+    <li ><a href="#method-i-must_respond_with">#must_respond_with</a>
+    
+    <li ><a href="#method-i-must_route_for">#must_route_for</a>
+    
+    <li ><a href="#method-i-must_route_from">#must_route_from</a>
+    
+    <li ><a href="#method-i-must_select">#must_select</a>
+    
+    <li ><a href="#method-i-must_select_email">#must_select_email</a>
+    
+    <li ><a href="#method-i-must_select_encoded">#must_select_encoded</a>
     
     <li ><a href="#method-i-wont_change">#wont_change</a>
     
-  </ul>
-</nav>
-
-  </div>
-
-  <div id="project-metadata">
-    <nav id="fileindex-section" class="section project-section">
-  <h3 class="section-header">Pages</h3>
-
-  <ul>
-  
-    <li class="file"><a href="../../CHANGELOG_rdoc.html">CHANGELOG</a>
-  
-    <li class="file"><a href="../../Manifest_txt.html">Manifest</a>
-  
-    <li class="file"><a href="../../README_rdoc.html">README</a>
-  
-  </ul>
-</nav>
-
-    <nav id="classindex-section" class="section project-section">
-  <h3 class="section-header">Class and Module Index</h3>
-
-  <ul class="link-list">
-  
-    <li><a href="../../ActionController.html">ActionController</a>
-  
-    <li><a href="../../ActionController/TestCase.html">ActionController::TestCase</a>
-  
-    <li><a href="../../ActionDispatch.html">ActionDispatch</a>
-  
-    <li><a href="../../ActionDispatch/IntegrationTest.html">ActionDispatch::IntegrationTest</a>
-  
-    <li><a href="../../ActionMailer.html">ActionMailer</a>
-  
-    <li><a href="../../ActionMailer/TestCase.html">ActionMailer::TestCase</a>
-  
-    <li><a href="../../ActionView.html">ActionView</a>
-  
-    <li><a href="../../ActionView/TestCase.html">ActionView::TestCase</a>
-  
-    <li><a href="../../ActiveRecord.html">ActiveRecord</a>
-  
-    <li><a href="../../ActiveSupport.html">ActiveSupport</a>
-  
-    <li><a href="../../ActiveSupport/TestCase.html">ActiveSupport::TestCase</a>
-  
-    <li><a href="../../MiniTest/Rails/Expectations.html">MiniTest::Rails::Expectations</a>
-  
-    <li><a href="../../MiniTest/Rails/Testing.html">MiniTest::Rails::Testing</a>
-  
-    <li><a href="../../MiniTest/Rails/Testing/ConstantLookup.html">MiniTest::Rails::Testing::ConstantLookup</a>
-  
-  </ul>
-</nav>
-
-  </div>
-</nav>
-
-<div id="documentation">
-  <h1 class="module">module MiniTest::Rails::Expectations</h1>
-
-  <div id="description" class="description">
+    <li ><a href="#method-i-wont_dom_equal">#wont_dom_equal</a>
     
-  </div><!-- description -->
+    <li ><a href="#method-i-wont_have_tag">#wont_have_tag</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-Minitest::Rails::Expectations">
+  <h1 id="module-Minitest::Rails::Expectations" class="module">
+    module Minitest::Rails::Expectations
+  </h1>
+
+  <section class="description">
+    
+  </section>
 
   
   
@@ -157,91 +121,11 @@
 
     
 
-    <!-- Methods -->
     
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Instance Methods</h3>
-
-    
-      <div id="method-i-must_be_blank" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">must_be_blank</span><span
-            class="method-args">(message = nil)</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Checks if an expression is blank. Passes if actual.blank? is true.</p>
-
-<pre>&quot;&quot;.must_be_blank
-nil.must_be_blank
-[].must_be_blank
-{}.must_be_blank</pre>
-
-<p>See also <a
-href="../../ActiveSupport/TestCase.html#method-i-assert_blank">ActiveSupport::TestCase#assert_blank</a></p>
-          
-          
-
-          
-          <div class="method-source-code" id="must_be_blank-source">
-            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 19</span>
-<span class="ruby-identifier">infect_an_assertion</span> <span class="ruby-value">:assert_blank</span>, <span class="ruby-value">:must_be_blank</span>, <span class="ruby-value">:unary</span>
-</pre>
-          </div><!-- must_be_blank-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- must_be_blank-method -->
-
-    
-      <div id="method-i-must_be_present" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">must_be_present</span><span
-            class="method-args">(message = nil)</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Checks if an expression is present. Passes if actual.present? is true.</p>
-
-<pre class="ruby"><span class="ruby-string">&quot;here&quot;</span>.<span class="ruby-identifier">must_be_present</span>
-<span class="ruby-constant">Object</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">must_be_present</span>
-[<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>].<span class="ruby-identifier">must_be_present</span>
-{:<span class="ruby-identifier">key</span> =<span class="ruby-operator">&gt;</span> :<span class="ruby-identifier">value</span>}.<span class="ruby-identifier">must_be_present</span>
-</pre>
-
-<p>See also <a
-href="../../ActiveSupport/TestCase.html#method-i-assert_present">ActiveSupport::TestCase#assert_present</a></p>
-          
-          
-
-          
-          <div class="method-source-code" id="must_be_present-source">
-            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 47</span>
-<span class="ruby-identifier">infect_an_assertion</span> <span class="ruby-value">:assert_present</span>, <span class="ruby-value">:must_be_present</span>, <span class="ruby-value">:unary</span>
-</pre>
-          </div><!-- must_be_present-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- must_be_present-method -->
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
 
     
       <div id="method-i-must_change" class="method-detail ">
@@ -272,24 +156,24 @@ href="../../ActiveSupport/TestCase.html#method-i-assert_difference">ActiveSuppor
 
           
           <div class="method-source-code" id="must_change-source">
-            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 75</span>
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 19</span>
 <span class="ruby-identifier">infect_an_assertion</span> <span class="ruby-value">:assert_difference</span>, <span class="ruby-value">:must_change</span>
 </pre>
-          </div><!-- must_change-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- must_change-method -->
+      </div>
 
     
-      <div id="method-i-wont_be_blank" class="method-detail ">
+      <div id="method-i-must_dom_equal" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">wont_be_blank</span><span
-            class="method-args">(message = nil)</span>
+          <span class="method-name">must_dom_equal</span><span
+            class="method-args">(expected, message = nil)</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -298,72 +182,767 @@ href="../../ActiveSupport/TestCase.html#method-i-assert_difference">ActiveSuppor
 
         <div class="method-description">
           
-          <p>Checks if an expression is not blank. Passes if actual.blank? is false.</p>
+          <p>Checks that two HTML strings are equivalent. That they contain the same
+elements and attributes with the associated values. Checks the numeric
+difference between the return value of an expression as a result of what is
+evaluated.</p>
 
-<pre class="ruby"><span class="ruby-string">&quot;here&quot;</span>.<span class="ruby-identifier">wont_be_blank</span>
-<span class="ruby-constant">Object</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">wont_be_blank</span>
-[<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>].<span class="ruby-identifier">wont_be_blank</span>
-{:<span class="ruby-identifier">key</span> =<span class="ruby-operator">&gt;</span> :<span class="ruby-identifier">value</span>}.<span class="ruby-identifier">wont_be_blank</span>
-</pre>
+<pre>apple_link = &#39;&lt;a href=&quot;http://www.example.com&quot;&gt;Apples&lt;/a&gt;&#39;
+link_to(&quot;Apples&quot;, &quot;http://www.example.com&quot;).must_dom_equal apple_link</pre>
 
 <p>See also <a
-href="../../ActiveSupport/TestCase.html#method-i-refute_blank">ActiveSupport::TestCase#refute_blank</a></p>
+href="../../ActionController/TestCase.html#method-i-assert_dom_equal">ActionController::TestCase#assert_dom_equal</a>
+See also ActionView::TestCase#assert_dom_equal See also
+ActionDispatch::IntegrationTest#assert_dom_equal</p>
           
           
 
           
-          <div class="method-source-code" id="wont_be_blank-source">
-            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 61</span>
-<span class="ruby-identifier">infect_an_assertion</span> <span class="ruby-value">:refute_blank</span>, <span class="ruby-value">:wont_be_blank</span>, <span class="ruby-value">:unary</span>
+          <div class="method-source-code" id="must_dom_equal-source">
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 392</span>
+<span class="ruby-identifier">infect_an_assertion</span> <span class="ruby-value">:assert_dom_equal</span>, <span class="ruby-value">:must_dom_equal</span>
 </pre>
-          </div><!-- wont_be_blank-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- wont_be_blank-method -->
+      </div>
 
     
-      <div id="method-i-wont_be_present" class="method-detail ">
+      <div id="method-i-must_have_tag" class="method-detail ">
+        
         
         <div class="method-heading">
-          <span class="method-name">wont_be_present</span><span
-            class="method-args">(message = nil)</span>
+          <span class="method-callseq">
+            must_have_tag(*opts)
+          </span>
           
           <span class="method-click-advice">click to toggle source</span>
           
         </div>
         
+        
 
         <div class="method-description">
           
-          <p>Checks if an expression is not present. Passes if actual.present? is false.</p>
+          <p>Expects that there is a tag/node/element in the body of the response that
+meets all of the given conditions. The <code>conditions</code> parameter
+must be a hash of any of the following keys (all are optional):</p>
+<ul><li>
+<p><code>:tag</code>: the node type must match the corresponding value</p>
+</li><li>
+<p><code>:attributes</code>: a hash. The node&#39;s attributes must match the
+corresponding values in the hash.</p>
+</li><li>
+<p><code>:parent</code>: a hash. The node&#39;s parent must match the
+corresponding hash.</p>
+</li><li>
+<p><code>:child</code>: a hash. At least one of the node&#39;s immediate
+children must meet the criteria described by the hash.</p>
+</li><li>
+<p><code>:ancestor</code>: a hash. At least one of the node&#39;s ancestors
+must meet the criteria described by the hash.</p>
+</li><li>
+<p><code>:descendant</code>: a hash. At least one of the node&#39;s
+descendants must meet the criteria described by the hash.</p>
+</li><li>
+<p><code>:sibling</code>: a hash. At least one of the node&#39;s siblings must
+meet the criteria described by the hash.</p>
+</li><li>
+<p><code>:after</code>: a hash. The node must be after any sibling meeting the
+criteria described by the hash, and at least one sibling must match.</p>
+</li><li>
+<p><code>:before</code>: a hash. The node must be before any sibling meeting
+the criteria described by the hash, and at least one sibling must match.</p>
+</li><li>
+<p><code>:children</code>: a hash, for counting children of a node. Accepts
+the keys:</p>
+<ul><li>
+<p><code>:count</code>: either a number or a range which must equal (or
+include) the number of children that match.</p>
+</li><li>
+<p><code>:less_than</code>: the number of matching children must be less than
+this number.</p>
+</li><li>
+<p><code>:greater_than</code>: the number of matching children must be greater
+than this number.</p>
+</li><li>
+<p><code>:only</code>: another hash consisting of the keys to use to match on
+the children, and only matching children will be counted.</p>
+</li></ul>
+</li><li>
+<p><code>:content</code>: the textual content of the node must match the given
+value. This will not match HTML tags in the body of a tag–only text.</p>
+</li></ul>
 
-<pre>&quot;&quot;.wont_be_present
-nil.wont_be_present
-[].wont_be_present
-{}.wont_be_present</pre>
+<p>Conditions are matched using the following algorithm:</p>
+<ul><li>
+<p>if the condition is a string, it must be a substring of the value.</p>
+</li><li>
+<p>if the condition is a regexp, it must match the value.</p>
+</li><li>
+<p>if the condition is a number, the value must match number.to_s.</p>
+</li><li>
+<p>if the condition is <code>true</code>, the value must not be
+<code>nil</code>.</p>
+</li><li>
+<p>if the condition is <code>false</code> or <code>nil</code>, the value must
+be <code>nil</code>.</p>
+
+<p># Expect that there is a “span” tag <a
+href="Expectations.html#method-i-must_have_tag">#must_have_tag</a> tag:
+“span”</p>
+
+<p># Expect that there is a “span” tag with id=“x” <a
+href="Expectations.html#method-i-must_have_tag">#must_have_tag</a> tag:
+“span”, attributes: { id: “x” }</p>
+
+<p># Expect that there is a “span” tag using the short-hand <a
+href="Expectations.html#method-i-must_have_tag">#must_have_tag</a> :span</p>
+
+<p># Expect that there is a “span” tag with id=“x” using the short-hand <a
+href="Expectations.html#method-i-must_have_tag">#must_have_tag</a> :span,
+attributes: { id: “x” }</p>
+
+<p># Expect that there is a “span” inside of a “div” <a
+href="Expectations.html#method-i-must_have_tag">#must_have_tag</a> tag:
+“span”, parent: { tag: “div” }</p>
+
+<p># Expect that there is a “span” somewhere inside a table <a
+href="Expectations.html#method-i-must_have_tag">#must_have_tag</a> tag:
+“span”, ancestor: { tag: “table” }</p>
+
+<p># Expect that there is a “span” with at least one “em” child <a
+href="Expectations.html#method-i-must_have_tag">#must_have_tag</a> tag:
+“span”, child: { tag: “em” }</p>
+
+<p># Expect that there is a “span” containing a (possibly nested) # “strong”
+tag. <a href="Expectations.html#method-i-must_have_tag">#must_have_tag</a>
+tag: “span”, descendant: { tag: “strong” }</p>
+
+<p># Expect that there is a “span” containing between 2 and 4 “em” tags # as
+immediate children <a
+href="Expectations.html#method-i-must_have_tag">#must_have_tag</a> tag:
+“span”,</p>
+
+<pre>children: { count: 2..4, only: { tag: &quot;em&quot; } }</pre>
+
+<p># Get funky: assert that there is a “div”, with an “ul” ancestor # and an
+“li” parent (with “class” = “enum”), and containing a # “span” descendant
+that contains text matching /hello world/ <a
+href="Expectations.html#method-i-must_have_tag">#must_have_tag</a> tag:
+“div”,</p>
+
+<pre>ancestor: { tag: &quot;ul&quot; },
+parent: { tag: &quot;li&quot;,
+             attributes: { class: &quot;enum&quot; } },
+descendant: { tag: &quot;span&quot;,
+                 child: /hello world/ }</pre>
+</li></ul>
+
+<p><strong>Please note</strong>: <code>must_have_tag</code> and
+<code>wont_have_tag</code> only work with well-formed XHTML. They recognize
+a few tags as implicitly self-closing (like br and hr and such) but will
+not work correctly with tags that allow optional closing tags (p, li, td).
+<em>You must explicitly close all of your tags to use these
+assertions.</em></p>
 
 <p>See also <a
-href="../../ActiveSupport/TestCase.html#method-i-refute_present">ActiveSupport::TestCase#refute_present</a></p>
+href="../../ActionController/TestCase.html#method-i-assert_tag">ActionController::TestCase#assert_tag</a>
+See also ActionView::TestCase#assert_tag See also
+ActionDispatch::IntegrationTest#assert_tag</p>
           
           
 
           
-          <div class="method-source-code" id="wont_be_present-source">
-            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 33</span>
-<span class="ruby-identifier">infect_an_assertion</span> <span class="ruby-value">:refute_present</span>, <span class="ruby-value">:wont_be_present</span>, <span class="ruby-value">:unary</span>
-</pre>
-          </div><!-- wont_be_present-source -->
+          <div class="method-source-code" id="must_have_tag-source">
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 509</span>
+  </pre>
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- wont_be_present-method -->
+      </div>
+
+    
+      <div id="method-i-must_redirect_to" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            must_redirect_to(options = {}, message=nil)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Expects that the redirection options passed in match those of the redirect
+called in the latest action. This match can be partial, such that
+<code>assert_redirected_to(controller: &quot;weblog&quot;)</code> will also
+match the redirection of <code>redirect_to(controller: &quot;weblog&quot;,
+action: &quot;show&quot;)</code> and so on.</p>
+
+<pre># expect that the redirection was to the &quot;index&quot; action on the WeblogController
+must_redirect_to controller: &quot;weblog&quot;, action: &quot;index&quot;
+
+# expect that the redirection was to the named route login_url
+must_redirect_to login_url
+
+# expect that the redirection was to the url for @customer
+must_redirect_to @customer
+
+# expect that the redirection matches the regular expression
+must_redirect_to %r(\Ahttp://example.org)</pre>
+
+<p>See also <a
+href="../../ActionController/TestCase.html#method-i-assert_redirected_to">ActionController::TestCase#assert_redirected_to</a>
+See also ActionView::TestCase#assert_redirected_to See also
+ActionDispatch::IntegrationTest#assert_redirected_to</p>
+          
+          
+
+          
+          <div class="method-source-code" id="must_redirect_to-source">
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 86</span>
+  </pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-must_render_template" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            must_render_template(options = {}, message = nil)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Expects that the request was rendered with the appropriate template file or
+partials.</p>
+
+<pre># expect that the &quot;new&quot; view template was rendered
+must_render_template &quot;new&quot;
+
+# expect that the exact template &quot;admin/posts/new&quot; was rendered
+must_render_template %r{\Aadmin/posts/new\Z}
+
+# expect that the layout &#39;admin&#39; was rendered
+must_render_template layout: &#39;admin&#39;
+must_render_template layout: &#39;layouts/admin&#39;
+must_render_template layout: :admin
+
+# expect that no layout was rendered
+must_render_template layout: nil
+must_render_template layout: false
+
+# expect that the &quot;_customer&quot; partial was rendered twice
+must_render_template partial: &#39;_customer&#39;, count: 2
+
+# expect that no partials were rendered
+must_render_template partial: false</pre>
+
+<p>In a view test case, you can also expect that specific locals are passed to
+partials:</p>
+
+<pre># expect that the &quot;_customer&quot; partial was rendered with a specific object
+must_render_template partial: &#39;_customer&#39;, locals: { customer: @customer }</pre>
+
+<p>See also <a
+href="../../ActionController/TestCase.html#method-i-assert_template">ActionController::TestCase#assert_template</a>
+See also ActionView::TestCase#assert_template See also
+ActionDispatch::IntegrationTest#assert_template</p>
+          
+          
+
+          
+          <div class="method-source-code" id="must_render_template-source">
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 123</span>
+  </pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-must_respond_with" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            must_respond_with(type, message = nil)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Expects that the response is one of the following types:</p>
+<ul><li>
+<p><code>:success</code>   - Status code was in the 200-299 range</p>
+</li><li>
+<p><code>:redirect</code>  - Status code was in the 300-399 range</p>
+</li><li>
+<p><code>:missing</code>   - Status code was 404</p>
+</li><li>
+<p><code>:error</code>     - Status code was in the 500-599 range</p>
+</li></ul>
+
+<p>You can also pass an explicit status number like
+<code>assert_response(501)</code> or its symbolic equivalent
+<code>assert_response(:not_implemented)</code>. See
+Rack::Utils::SYMBOL_TO_STATUS_CODE for a full list.</p>
+
+<pre># expect that the response was a redirection
+must_respond_with :redirect
+response.must_respond_with :redirect
+
+# expect that the response code was status code 401 (unauthorized)
+must_respond_with 401
+response.must_respond_with 401</pre>
+
+<p>See also <a
+href="../../ActionController/TestCase.html#method-i-assert_response">ActionController::TestCase#assert_response</a>
+See also ActionView::TestCase#assert_response See also
+ActionDispatch::IntegrationTest#assert_response</p>
+          
+          
+
+          
+          <div class="method-source-code" id="must_respond_with-source">
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 62</span>
+  </pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-must_route_for" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            must_route_for(path, defaults={}, extras={}, message=nil)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Expects that path and options match both ways; in other words, it verifies
+that <code>path</code> generates <code>options</code> and then that
+<code>options</code> generates <code>path</code>. This essentially combines
+<code>assert_recognizes</code> and <code>assert_generates</code> into one
+step.</p>
+
+<p>The <code>extras</code> hash allows you to specify options that would
+normally be provided as a query string to the action. The
+<code>message</code> parameter allows you to specify a custom error message
+to display upon failure.</p>
+
+<pre># Expect a basic route: a controller with the default action (index)
+{ controller: &#39;home&#39;, action: &#39;index&#39; }.must_route_for &#39;/home&#39;
+
+# Test a route generated with a specific controller, action, and parameter (id)
+{ controller: &#39;entries&#39;, action: &#39;show&#39;, id: 23 }.must_route_for &#39;/entries/show/23&#39;
+
+# Expect a basic route (controller + default action), with an error message if it fails
+{ controller: &#39;store&#39;, action: &#39;index&#39; }.must_route_for &#39;/store&#39;
+
+# Tests a route, providing a defaults hash
+{id: &quot;9&quot;, item: &quot;square&quot;}.must_route_for &#39;controller/action/9&#39;, {controller: &quot;controller&quot;, action: &quot;action&quot;}, {}, {item: &quot;square&quot;}
+
+# Tests a route with a HTTP method
+{ controller: &quot;product&quot;, action: &quot;update&quot;, id: &quot;321&quot; }.must_route_for({ method: &#39;put&#39;, path: &#39;/product/321&#39; })</pre>
+
+<p>See also <a
+href="../../ActionController/TestCase.html#method-i-assert_routing">ActionController::TestCase#assert_routing</a>
+See also ActionView::TestCase#assert_routing See also
+ActionDispatch::IntegrationTest#assert_routing</p>
+          
+          
+
+          
+          <div class="method-source-code" id="must_route_for-source">
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 219</span>
+<span class="ruby-identifier">infect_an_assertion</span> <span class="ruby-value">:assert_routing</span>, <span class="ruby-value">:must_route_for</span>
+</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-must_route_from" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            must_route_from(expected_path, defaults={}, extras = {}, message=nil)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Expects that the provided options can be used to generate the provided
+path. This is the inverse of <code>assert_recognizes</code>. The
+<code>extras</code> parameter is used to tell the request the names and
+values of additional request parameters that would be in a query string.
+The <code>message</code> parameter allows you to specify a custom error
+message for assertion failures.</p>
+
+<p>The <code>defaults</code> parameter is unused.</p>
+
+<pre># Expects that the default action is generated for a route with no action
+{controller: &quot;items&quot;, action: &quot;index&quot;}.must_route_from &quot;/items&quot;
+
+# Tests that the list action is properly routed
+{controller: &quot;items&quot;, action: &quot;list&quot;}.must_route_to &quot;/items/list&quot;
+
+# Tests the generation of a route with a parameter
+{ controller: &quot;items&quot;, action: &quot;list&quot;, id: &quot;1&quot; }.must_route_from &quot;/items/list/1&quot;
+
+# Expects that the generated route gives us our custom route
+{ controller: &#39;scm&#39;, action: &#39;show_diff&#39;, revision: &quot;12&quot; }.must_route_from &quot;changesets/12&quot;</pre>
+
+<p>See also <a
+href="../../ActionController/TestCase.html#method-i-assert_generates">ActionController::TestCase#assert_generates</a>
+See also ActionView::TestCase#assert_generates See also
+ActionDispatch::IntegrationTest#assert_generates</p>
+          
+          
+
+          
+          <div class="method-source-code" id="must_route_from-source">
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 148</span>
+<span class="ruby-identifier">infect_an_assertion</span> <span class="ruby-value">:assert_generates</span>, <span class="ruby-value">:must_route_to</span>
+</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-must_select" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            must_select(*args, &amp;block)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An expectation that selects elements and makes one or more equality tests.</p>
+
+<p>If the first argument is an element, selects all matching elements starting
+from (and including) that element and all its children in depth-first
+order.</p>
+
+<p>If no element if specified, calling <code>must_select</code> selects from
+the response HTML unless <code>must_select</code> is called from within an
+<code>must_select</code> block.</p>
+
+<p>When called with a block <code>must_select</code> passes an array of
+selected elements to the block. Calling <code>must_select</code> from the
+block, with no element specified, runs the expectation on the complete set
+of elements selected by the enclosing expectation. Alternatively the array
+may be iterated through so that <code>must_select</code> can be called
+separately for each element.</p>
+
+<h4 id="method-i-must_select-label-Example">Example<span><a href="#method-i-must_select-label-Example">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+
+<p>If the response contains two ordered lists, each with four list elements
+then:</p>
+
+<pre class="ruby"><span class="ruby-identifier">must_select</span> <span class="ruby-string">&quot;ol&quot;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">elements</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">element</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">must_select</span> <span class="ruby-identifier">element</span>, <span class="ruby-string">&quot;li&quot;</span>, <span class="ruby-value">4</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>will pass, as will:</p>
+
+<pre>must_select &quot;ol&quot; do
+  must_select &quot;li&quot;, 8
+end</pre>
+
+<p>The selector may be a CSS selector expression (String), an expression with
+substitution values, or an HTML::Selector object.</p>
+
+<h3 id="method-i-must_select-label-Equality+Tests">Equality Tests<span><a href="#method-i-must_select-label-Equality+Tests">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+
+<p>The equality test may be one of the following:</p>
+<ul><li>
+<p><code>true</code> - Assertion is true if at least one element selected.</p>
+</li><li>
+<p><code>false</code> - Assertion is true if no element selected.</p>
+</li><li>
+<p><code>String/Regexp</code> - Assertion is true if the text value of at
+least one element matches the string or regular expression.</p>
+</li><li>
+<p><code>Integer</code> - Assertion is true if exactly that number of elements
+are selected.</p>
+</li><li>
+<p><code>Range</code> - Assertion is true if the number of selected elements
+fit the range.</p>
+</li></ul>
+
+<p>If no equality test specified, the expectation is true if at least one
+element selected.</p>
+
+<p>To perform more than one equality tests, use a hash with the following
+keys:</p>
+<ul><li>
+<p><code>:text</code> - Narrow the selection to elements that have this text
+value (string or regexp).</p>
+</li><li>
+<p><code>:html</code> - Narrow the selection to elements that have this HTML
+content (string or regexp).</p>
+</li><li>
+<p><code>:count</code> - Assertion is true if the number of selected elements
+is equal to this value.</p>
+</li><li>
+<p><code>:minimum</code> - Assertion is true if the number of selected
+elements is at least this value.</p>
+</li><li>
+<p><code>:maximum</code> - Assertion is true if the number of selected
+elements is at most this value.</p>
+</li></ul>
+
+<p>If the method is called with a block, once all equality tests are evaluated
+the block is called with an array of all matched elements.</p>
+
+<pre># At least one form element
+must_select &quot;form&quot;
+
+# Form element includes four input fields
+must_select &quot;form input&quot;, 4
+
+# Page title is &quot;Welcome&quot;
+must_select &quot;title&quot;, &quot;Welcome&quot;
+
+# Page title is &quot;Welcome&quot; and there is only one title element
+must_select &quot;title&quot;, {count: 1, text: &quot;Welcome&quot;},
+    &quot;Wrong title or more than one title element&quot;
+
+# Page contains no forms
+must_select &quot;form&quot;, false, &quot;This page must contain no forms&quot;
+
+# Test the content and style
+must_select &quot;body div.header ul.menu&quot;
+
+# Use substitution values
+must_select &quot;ol&gt;li#?&quot;, /item-\d+/
+
+# All input fields in the form have a name
+must_select &quot;form input&quot; do
+  must_select &quot;[name=?]&quot;, /.+/  # Not empty
+end</pre>
+
+<p>See also <a
+href="../../ActionController/TestCase.html#method-i-assert_select">ActionController::TestCase#assert_select</a>
+See also ActionView::TestCase#assert_select See also
+ActionDispatch::IntegrationTest#assert_select</p>
+          
+          
+
+          
+          <div class="method-source-code" id="must_select-source">
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 316</span>
+  </pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-must_select_email" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            must_select_email(&amp;block)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Extracts the body of an email and runs nested expectations on it.</p>
+
+<p>You must enable deliveries for this expectation to work, use:</p>
+
+<pre> ActionMailer::Base.perform_deliveries = true
+
+must_select_email do
+  must_select &quot;h1&quot;, &quot;Email alert&quot;
+end
+
+must_select_email do
+  items = must_select &quot;ol&gt;li&quot;
+  items.each do
+     # Work with items here...
+  end
+end</pre>
+
+<p>See also <a
+href="../../ActionController/TestCase.html#method-i-assert_select_email">ActionController::TestCase#assert_select_email</a>
+See also ActionView::TestCase#assert_select_email See also
+ActionDispatch::IntegrationTest#assert_select_email</p>
+          
+          
+
+          
+          <div class="method-source-code" id="must_select_email-source">
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 339</span>
+  </pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-must_select_encoded" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            must_select_encoded(element = nil, &amp;block)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Extracts the content of an element, treats it as encoded HTML and runs
+nested expectation on it.</p>
+
+<p>You typically call this method within another expectation to operate on all
+currently selected elements. You can also pass an element or array of
+elements.</p>
+
+<p>The content of each element is un-encoded, and wrapped in the root element
+<code>encoded</code>. It then calls the block with all un-encoded elements.</p>
+
+<pre># Selects all bold tags from within the title of an Atom feed&#39;s entries (perhaps to nab a section name prefix)
+must_select &quot;feed[xmlns=&#39;http://www.w3.org/2005/Atom&#39;]&quot; do
+  # Select each entry item and then the title item
+  must_select &quot;entry&gt;title&quot; do
+    # Run expectations on the encoded title elements
+    must_select_encoded do
+      must_select &quot;b&quot;
+    end
+  end
+end
+
+# Selects all paragraph tags from within the description of an RSS feed
+must_select &quot;rss[version=2.0]&quot; do
+  # Select description element of each feed item.
+  must_select &quot;channel&gt;item&gt;description&quot; do
+    # Run expectations on the encoded elements.
+    must_select_encoded do
+      must_select &quot;p&quot;
+    end
+  end
+end</pre>
+
+<p>See also <a
+href="../../ActionController/TestCase.html#method-i-assert_select_encoded">ActionController::TestCase#assert_select_encoded</a>
+See also ActionView::TestCase#assert_select_encoded See also
+ActionDispatch::IntegrationTest#assert_select_encoded</p>
+          
+          
+
+          
+          <div class="method-source-code" id="must_select_encoded-source">
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 379</span>
+  </pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
 
     
       <div id="method-i-wont_change" class="method-detail ">
@@ -391,29 +970,127 @@ href="../../ActiveSupport/TestCase.html#method-i-refute_difference">ActiveSuppor
 
           
           <div class="method-source-code" id="wont_change-source">
-            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 86</span>
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 30</span>
 <span class="ruby-identifier">infect_an_assertion</span> <span class="ruby-value">:refute_difference</span>, <span class="ruby-value">:wont_change</span>
 </pre>
-          </div><!-- wont_change-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- wont_change-method -->
+      </div>
 
     
-    </section><!-- public-instance-method-details -->
+      <div id="method-i-wont_dom_equal" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">wont_dom_equal</span><span
+            class="method-args">(expected, message = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks that the numeric result of evaluating an expression is not changed
+before and after invoking.</p>
+
+<pre>orange_link = &#39;&lt;a href=&quot;http://www.example.com&quot;&gt;Oranges&lt;/a&gt;&#39;
+link_to(&quot;Apples&quot;, &quot;http://www.example.com&quot;).wont_dom_equal orange_link</pre>
+
+<p>See also <a
+href="../../ActionController/TestCase.html#method-i-refute_dom_equal">ActionController::TestCase#refute_dom_equal</a>
+See also ActionView::TestCase#refute_dom_equal See also
+ActionDispatch::IntegrationTest#refute_dom_equal See also <a
+href="../../ActionController/TestCase.html#method-i-assert_dom_not_equal">ActionController::TestCase#assert_dom_not_equal</a>
+See also ActionView::TestCase#assert_dom_not_equal See also
+ActionDispatch::IntegrationTest#assert_dom_not_equal</p>
+          
+          
+
+          
+          <div class="method-source-code" id="wont_dom_equal-source">
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 409</span>
+<span class="ruby-identifier">infect_an_assertion</span> <span class="ruby-value">:refute_dom_equal</span>, <span class="ruby-value">:wont_dom_equal</span>
+</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-wont_have_tag" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            wont_have_tag(*opts)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Identical to <code>must_have_tag</code>, but asserts that a matching tag
+does <em>not</em> exist. (See <code>must_have_tag</code> for a full
+discussion of the syntax.)</p>
+
+<pre># Expect that there is not a &quot;div&quot; containing a &quot;p&quot;
+wont_have_tag tag: &quot;div&quot;, descendant: { tag: &quot;p&quot; }
+
+# Expect that an unordered list is empty
+wont_have_tag tag: &quot;ul&quot;, descendant: { tag: &quot;li&quot; }
+
+# Expect that there is not a &quot;p&quot; tag with between 1 to 3 &quot;img&quot; tags
+# as immediate children
+wont_have_tag tag: &quot;p&quot;,
+           children: { count: 1..3, only: { tag: &quot;img&quot; } }</pre>
+
+<p>See also <a
+href="../../ActionController/TestCase.html#method-i-refute_tag">ActionController::TestCase#refute_tag</a>
+See also ActionView::TestCase#refute_tag See also
+ActionDispatch::IntegrationTest#refute_tag See also <a
+href="../../ActionController/TestCase.html#method-i-assert_no_tag">ActionController::TestCase#assert_no_tag</a>
+See also ActionView::TestCase#assert_no_tag See also
+ActionDispatch::IntegrationTest#assert_no_tag</p>
+          
+          
+
+          
+          <div class="method-source-code" id="wont_have_tag-source">
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 533</span>
+</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
   
-  </section><!-- 5Buntitled-5D -->
+  </section>
+</main>
 
-</div><!-- documentation -->
 
-
-<footer id="validator-badges">
-  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
-  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 
