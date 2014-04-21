@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>README - minitest-rails-2.0.0.beta1 Documentation</title>
+<title>README - minitest-rails-2.0.0 Documentation</title>
 
 <link href="./fonts.css" rel="stylesheet">
 <link href="./rdoc.css" rel="stylesheet">
@@ -62,6 +62,7 @@
     <li><a href="#label-Install">Install</a>
     <li><a href="#label-Configure">Configure</a>
     <li><a href="#label-Usage">Usage</a>
+    <li><a href="#label-Running+Tests">Running Tests</a>
     <li><a href="#label-Using+Rails+4.0+or+earlier">Using Rails 4.0 or earlier</a>
     <li><a href="#label-Capybara">Capybara</a>
     <li><a href="#label-RSpec+Compatibility">RSpec Compatibility</a>
@@ -160,24 +161,28 @@ and other generators:</p>
 <span class="ruby-keyword">end</span>
 </pre>
 
-<p>To run your tests, minitest-rails provides multiple rake tasks by default,
-for a complete list, simply run <code>rake -T</code>.</p>
+<h2 id="label-Running+Tests">Running Tests<span><a href="#label-Running+Tests">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
-<p>You can also add any directories under <code>test/</code> and
-minitest-rails will automatically create the associated rake task for it.
-So let say you add a <code>test/api/</code> directory, <code>rake
-minitest:api</code> will automagically be available.</p>
+<p>To run your tests use the <code>rake test</code> that ship with rails. For
+a complete list run <code>rake -T</code>.</p>
 
-<p>If you want to automatically run <code>rake minitest:api</code> when you
-call <code>rake minitest</code>, add this line to a new .rake file under
-<code>lib/tasks/</code>:</p>
+<p>To add additional testing tasks, define them in your <code>Rakefile</code>
+or a file in <code>lib/tasks</code> like so:</p>
 
-<pre>Minitest::Rails::Testing.default_tasks &lt;&lt; &#39;api&#39;</pre>
+<pre class="ruby"><span class="ruby-constant">Rails</span><span class="ruby-operator">::</span><span class="ruby-constant">TestTask</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;test:presenters&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;test:prepare&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">t</span>.<span class="ruby-identifier">pattern</span> = <span class="ruby-string">&quot;test/presenters   /*_test.rb&quot;</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>If you want your new task to be run when you run <code>rake test</code>,
+also add the following:</p>
+
+<pre>Rake::Task[&quot;test:run&quot;].enhance [&quot;test:presenters&quot;]</pre>
 
 <h2 id="label-Using+Rails+4.0+or+earlier">Using Rails 4.0 or earlier<span><a href="#label-Using+Rails+4.0+or+earlier">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
-<p>For information on running Rails 3.0 through 4.0, see the <a
-href="README_rdoc.html">README</a> for the 1.x branch: <a
+<p>For information on using minitest-rails with Rails 3.0 through 4.0, see the
+<a href="README_rdoc.html">README</a> for the 1.x branch: <a
 href="https://github.com/blowmage/minitest-rails/tree/1.x#readme">github.com/blowmage/minitest-rails/tree/1.x#readme</a></p>
 
 <h2 id="label-Capybara">Capybara<span><a href="#label-Capybara">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
