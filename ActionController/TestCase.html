@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>class ActionController::TestCase - minitest-rails-2.0.1</title>
+<title>class ActionController::TestCase - minitest-rails-2.0.2</title>
 
 <link href="../fonts.css" rel="stylesheet">
 <link href="../rdoc.css" rel="stylesheet">
@@ -73,8 +73,6 @@
 
   <ul class="link-list" role="directory">
     
-    <li ><a href="#method-c-determine_default_controller_class">::determine_default_controller_class</a>
-    
     <li ><a href="#method-i-assert_dom_equal">#assert_dom_equal</a>
     
     <li ><a href="#method-i-assert_dom_not_equal">#assert_dom_not_equal</a>
@@ -133,51 +131,6 @@
     
 
     
-     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
-       <header>
-         <h3>Public Class Methods</h3>
-       </header>
-
-    
-      <div id="method-c-determine_default_controller_class" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">determine_default_controller_class</span><span
-            class="method-args">(name)</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Resolve the controller from the test name when using the spec DSL</p>
-          
-          
-
-          
-          <div class="method-source-code" id="determine_default_controller_class-source">
-            <pre><span class="ruby-comment"># File lib/minitest/rails.rb, line 51</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">determine_default_controller_class</span>(<span class="ruby-identifier">name</span>)
-  <span class="ruby-identifier">controller</span> = <span class="ruby-identifier">determine_constant_from_test_name</span>(<span class="ruby-identifier">name</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">constant</span><span class="ruby-operator">|</span>
-    <span class="ruby-constant">Class</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">constant</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">constant</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Metal</span>
-  <span class="ruby-keyword">end</span>
-  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NameError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;Unable to resolve controller for #{name}&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">controller</span>.<span class="ruby-identifier">nil?</span>
-  <span class="ruby-identifier">controller</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
-    
-    </section>
-  
      <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
        <header>
          <h3>Public Instance Methods</h3>
