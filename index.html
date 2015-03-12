@@ -4,21 +4,18 @@
 <head>
 <meta charset="UTF-8">
 
-<title>minitest-rails-2.0.3</title>
-
-<link href="./fonts.css" rel="stylesheet">
-<link href="./rdoc.css" rel="stylesheet">
+<title>minitest-rails-2.1.1 Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
 </script>
 
 <script src="./js/jquery.js"></script>
-<script src="./js/navigation.js"></script>
-<script src="./js/search_index.js"></script>
-<script src="./js/search.js"></script>
-<script src="./js/searcher.js"></script>
 <script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
 
 
 <body id="top" role="document" class="file">
@@ -74,6 +71,22 @@
 
   <ul class="link-list">
   
+    <li><a href="./ActionController/TestCase.html">ActionController::TestCase</a>
+  
+    <li><a href="./ActionDispatch/IntegrationTest.html">ActionDispatch::IntegrationTest</a>
+  
+    <li><a href="./ActionMailer.html">ActionMailer</a>
+  
+    <li><a href="./ActionMailer/TestCase.html">ActionMailer::TestCase</a>
+  
+    <li><a href="./ActionView/TestCase.html">ActionView::TestCase</a>
+  
+    <li><a href="./ActiveSupport.html">ActiveSupport</a>
+  
+    <li><a href="./ActiveSupport/TestCase.html">ActiveSupport::TestCase</a>
+  
+    <li><a href="./ActiveSupport/TestCase/ActiveRecord.html">ActiveSupport::TestCase::ActiveRecord</a>
+  
     <li><a href="./Minitest.html">Minitest</a>
   
     <li><a href="./Minitest/Rails.html">Minitest::Rails</a>
@@ -84,6 +97,14 @@
   
     <li><a href="./Minitest/Rails/Railtie.html">Minitest::Rails::Railtie</a>
   
+    <li><a href="./Minitest/Rails/Railtie/Rake.html">Minitest::Rails::Railtie::Rake</a>
+  
+    <li><a href="./Rails.html">Rails</a>
+  
+    <li><a href="./Rails/Generators.html">Rails::Generators</a>
+  
+    <li><a href="./Rails/Generators/TestCase.html">Rails::Generators::TestCase</a>
+  
   </ul>
 </div>
 
@@ -93,66 +114,78 @@
 <main role="main">
 
 
-<h1 id="label-minitest-rails">minitest-rails<span><a href="#label-minitest-rails">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="label-minitest-rails">minitest-rails<span><a href="#label-minitest-rails">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
-<p><a href="Minitest.html">Minitest</a> integration for Rails 4.1+</p>
+<p><a href="Minitest.html">Minitest</a> integration for <a
+href="Rails.html">Rails</a> 4.1+</p>
 
 <p><a href="http://travis-ci.org/blowmage/minitest-rails"><img
 src="https://secure.travis-ci.org/blowmage/minitest-rails.png" alt="Build
 Status" /></a> <a
 href="https://codeclimate.com/github/blowmage/minitest-rails"><img
-src="https://codeclimate.com/github/blowmage/minitest-rails.png" /></a></p>
+src="https://codeclimate.com/github/blowmage/minitest-rails.png" /></a> <a
+href="https://gitter.im/blowmage/minitest-rails"><img
+src="https://badges.gitter.im/Join Chat.svg" /></a></p>
 
-<h2 id="label-Install">Install<span><a href="#label-Install">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Install">Install<span><a href="#label-Install">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<pre>gem install minitest-rails</pre>
+<pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-identifier">install</span> <span class="ruby-identifier">minitest</span><span class="ruby-operator">-</span><span class="ruby-identifier">rails</span>
+</pre>
 
 <p>This installs the following gems:</p>
 
-<pre>minitest</pre>
+<pre class="ruby"><span class="ruby-identifier">minitest</span>
+</pre>
 
-<h2 id="label-Configure">Configure<span><a href="#label-Configure">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Configure">Configure<span><a href="#label-Configure">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>Create a new rails app:</p>
 
-<pre>rails new MyApp</pre>
+<pre class="ruby"><span class="ruby-identifier">rails</span> <span class="ruby-identifier">new</span> <span class="ruby-constant">MyApp</span>
+</pre>
 
 <p>Add <code>minitest-rails</code> to the Gemfile:</p>
 
-<pre>gem &quot;minitest-rails&quot;</pre>
+<pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;minitest-rails&quot;</span>
+</pre>
 
-<p>If you are running Rails 4.0 or earlier, be sure to specify a 1.x release
-in the Gemfile:</p>
+<p>If you are running <a href="Rails.html">Rails</a> 4.0 or earlier, be sure
+to specify a 1.x release in the Gemfile:</p>
 
-<pre>gem &quot;minitest-rails&quot;, &quot;~&gt; 1.0&quot;</pre>
+<pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;minitest-rails&quot;</span>, <span class="ruby-string">&quot;~&gt; 1.0&quot;</span>
+</pre>
 
 <p>Next run the installation generator with the following:</p>
 
-<pre>rails generate minitest:install</pre>
+<pre class="ruby"><span class="ruby-identifier">rails</span> <span class="ruby-identifier">generate</span> <span class="ruby-identifier">minitest</span>:<span class="ruby-identifier">install</span>
+</pre>
 
 <p>This will add the <code>test_helper.rb</code> file to the <code>test</code>
 directory.</p>
 
-<h2 id="label-Usage">Usage<span><a href="#label-Usage">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Usage">Usage<span><a href="#label-Usage">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>This project aims to enable <a href="Minitest.html">Minitest</a> within the
-Rails TestCase classes. Your test will continue to inherit from
-<code>ActiveSupport::TestCase</code>, which will now support the spec DSL.
-You can generate test files with the standard model, controller, resource,
-and other generators:</p>
+<a href="Rails.html">Rails</a> TestCase classes. Your test will continue to
+inherit from <code>ActiveSupport::TestCase</code>, which will now support
+the spec DSL. You can generate test files with the standard model,
+controller, resource, and other generators:</p>
 
-<pre>rails generate model User</pre>
+<pre class="ruby"><span class="ruby-identifier">rails</span> <span class="ruby-identifier">generate</span> <span class="ruby-identifier">model</span> <span class="ruby-constant">User</span>
+</pre>
 
 <p>And you can specify generating the tests using the
 <code>Minitest::Spec</code> DSL on any of the generators by providing the
 <code>--spec</code> option:</p>
 
-<pre>rails generate model User --spec</pre>
+<pre class="ruby"><span class="ruby-identifier">rails</span> <span class="ruby-identifier">generate</span> <span class="ruby-identifier">model</span> <span class="ruby-constant">User</span> <span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-identifier">spec</span>
+</pre>
 
 <p>And you can specify not generating the fixture for a model by providing the
 <code>--skip-fixture</code> option:</p>
 
-<pre>rails generate model User --skip-fixture</pre>
+<pre class="ruby"><span class="ruby-identifier">rails</span> <span class="ruby-identifier">generate</span> <span class="ruby-identifier">model</span> <span class="ruby-constant">User</span> <span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-identifier">skip</span><span class="ruby-operator">-</span><span class="ruby-identifier">fixture</span>
+</pre>
 
 <p>You can also set these as defaults by adding the following to the
 <code>config/application.rb</code> file:</p>
@@ -162,7 +195,7 @@ and other generators:</p>
 <span class="ruby-keyword">end</span>
 </pre>
 
-<h2 id="label-Running+Tests">Running Tests<span><a href="#label-Running+Tests">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Running+Tests">Running Tests<span><a href="#label-Running+Tests">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>To run your tests use the <code>rake test</code> that ship with rails. For
 a complete list run <code>rake -T</code>.</p>
@@ -178,22 +211,24 @@ or a file in <code>lib/tasks</code> like so:</p>
 <p>If you want your new task to be run when you run <code>rake test</code>,
 also add the following:</p>
 
-<pre>Rake::Task[&quot;test:run&quot;].enhance [&quot;test:presenters&quot;]</pre>
+<pre class="ruby"><span class="ruby-constant">Rake</span><span class="ruby-operator">::</span><span class="ruby-constant">Task</span>[<span class="ruby-string">&quot;test:run&quot;</span>].<span class="ruby-identifier">enhance</span> [<span class="ruby-string">&quot;test:presenters&quot;</span>]
+</pre>
 
-<h2 id="label-Using+Rails+4.0+or+earlier">Using Rails 4.0 or earlier<span><a href="#label-Using+Rails+4.0+or+earlier">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Using+Rails+4.0+or+earlier">Using <a href="Rails.html">Rails</a> 4.0 or earlier<span><a href="#label-Using+Rails+4.0+or+earlier">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<p>For information on using minitest-rails with Rails 3.0 through 4.0, see the
-<a href="README_rdoc.html">README</a> for the 1.x branch: <a
+<p>For information on using minitest-rails with <a href="Rails.html">Rails</a>
+3.0 through 4.0, see the <a href="README_rdoc.html">README</a> for the 1.x
+branch: <a
 href="https://github.com/blowmage/minitest-rails/tree/1.x#readme">github.com/blowmage/minitest-rails/tree/1.x#readme</a></p>
 
-<h2 id="label-Capybara">Capybara<span><a href="#label-Capybara">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Capybara">Capybara<span><a href="#label-Capybara">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>You can use Capybara for feature tests by adding
 <code>minitest-rails-capybara</code> as a dependency. See the <a
 href="README_rdoc.html">README</a> for more information: <a
 href="https://github.com/blowmage/minitest-rails-capybara">github.com/blowmage/minitest-rails-capybara</a></p>
 
-<h2 id="label-RSpec+Compatibility">RSpec Compatibility<span><a href="#label-RSpec+Compatibility">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-RSpec+Compatibility">RSpec Compatibility<span><a href="#label-RSpec+Compatibility">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>RSpec and Minitest&#39;s spec DSL are incompatible and both cannot be
 loaded at the same time. If your tests using the spec DSL are not running
@@ -205,14 +240,19 @@ needed gems. e.g. To use RSpec mocks with minitest-rails require the
 “rspec-mocks” gem only, and not the main “rspec” gem which activates the
 RSpec DSL.</p>
 
-<h2 id="label-Get+Involved">Get Involved<span><a href="#label-Get+Involved">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Get+Involved">Get Involved<span><a href="#label-Get+Involved">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>Join the mailing list to get help or offer suggestions.</p>
 
 <p><a
 href="https://groups.google.com/group/minitest-rails">groups.google.com/group/minitest-rails</a></p>
 
-<h2 id="label-License">License<span><a href="#label-License">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<p>Or join the discussion on Gitter.</p>
+
+<p><a
+href="https://gitter.im/blowmage/minitest-rails">gitter.im/blowmage/minitest-rails</a></p>
+
+<h2 id="label-License">License<span><a href="#label-License">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>Copyright © 2014 Mike Moore</p>
 
@@ -239,7 +279,7 @@ DEALINGS IN THE SOFTWARE.</p>
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
-  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

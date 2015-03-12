@@ -4,21 +4,18 @@
 <head>
 <meta charset="UTF-8">
 
-<title>module Minitest::Rails::Expectations - minitest-rails-2.0.3</title>
-
-<link href="../../fonts.css" rel="stylesheet">
-<link href="../../rdoc.css" rel="stylesheet">
+<title>module Minitest::Rails::Expectations - minitest-rails-2.1.1 Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
 </script>
 
 <script src="../../js/jquery.js"></script>
-<script src="../../js/navigation.js"></script>
-<script src="../../js/search_index.js"></script>
-<script src="../../js/search.js"></script>
-<script src="../../js/searcher.js"></script>
 <script src="../../js/darkfish.js"></script>
+
+<link href="../../css/fonts.css" rel="stylesheet">
+<link href="../../css/rdoc.css" rel="stylesheet">
+
 
 
 <body id="top" role="document" class="module">
@@ -144,10 +141,11 @@
           <p>Checks the numeric difference between the return value of an expression as
 a result of what is evaluated.</p>
 
-<pre>lambda { User.create password: &quot;valid&quot; }.must_change &quot;User.count&quot;
-lambda { 3.times do
-       User.create password: &quot;valid&quot;
-     end }.must_change &quot;User.count&quot;, 3</pre>
+<pre class="ruby"><span class="ruby-identifier">lambda</span> { <span class="ruby-constant">User</span>.<span class="ruby-identifier">create</span> <span class="ruby-identifier">password</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;valid&quot;</span> }.<span class="ruby-identifier">must_change</span> <span class="ruby-string">&quot;User.count&quot;</span>
+<span class="ruby-identifier">lambda</span> { <span class="ruby-value">3</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span>
+       <span class="ruby-constant">User</span>.<span class="ruby-identifier">create</span> <span class="ruby-identifier">password</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;valid&quot;</span>
+     <span class="ruby-keyword">end</span> }.<span class="ruby-identifier">must_change</span> <span class="ruby-string">&quot;User.count&quot;</span>, <span class="ruby-value">3</span>
+</pre>
 
 <p>See also <a
 href="../../ActiveSupport/TestCase.html#method-i-assert_difference">ActiveSupport::TestCase#assert_difference</a></p>
@@ -187,8 +185,9 @@ elements and attributes with the associated values. Checks the numeric
 difference between the return value of an expression as a result of what is
 evaluated.</p>
 
-<pre>apple_link = &#39;&lt;a href=&quot;http://www.example.com&quot;&gt;Apples&lt;/a&gt;&#39;
-link_to(&quot;Apples&quot;, &quot;http://www.example.com&quot;).must_dom_equal apple_link</pre>
+<pre class="ruby"><span class="ruby-identifier">apple_link</span> = <span class="ruby-string">&#39;&lt;a href=&quot;http://www.example.com&quot;&gt;Apples&lt;/a&gt;&#39;</span>
+<span class="ruby-identifier">link_to</span>(<span class="ruby-string">&quot;Apples&quot;</span>, <span class="ruby-string">&quot;http://www.example.com&quot;</span>).<span class="ruby-identifier">must_dom_equal</span> <span class="ruby-identifier">apple_link</span>
+</pre>
 
 <p>See also <a
 href="../../ActionController/TestCase.html#method-i-assert_dom_equal">ActionController::TestCase#assert_dom_equal</a>
@@ -393,17 +392,18 @@ called in the latest action. This match can be partial, such that
 match the redirection of <code>redirect_to(controller: &quot;weblog&quot;,
 action: &quot;show&quot;)</code> and so on.</p>
 
-<pre># expect that the redirection was to the &quot;index&quot; action on the WeblogController
-must_redirect_to controller: &quot;weblog&quot;, action: &quot;index&quot;
+<pre class="ruby"><span class="ruby-comment"># expect that the redirection was to the &quot;index&quot; action on the WeblogController</span>
+<span class="ruby-identifier">must_redirect_to</span> <span class="ruby-identifier">controller</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;weblog&quot;</span>, <span class="ruby-identifier">action</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;index&quot;</span>
 
-# expect that the redirection was to the named route login_url
-must_redirect_to login_url
+<span class="ruby-comment"># expect that the redirection was to the named route login_url</span>
+<span class="ruby-identifier">must_redirect_to</span> <span class="ruby-identifier">login_url</span>
 
-# expect that the redirection was to the url for @customer
-must_redirect_to @customer
+<span class="ruby-comment"># expect that the redirection was to the url for @customer</span>
+<span class="ruby-identifier">must_redirect_to</span> <span class="ruby-ivar">@customer</span>
 
-# expect that the redirection matches the regular expression
-must_redirect_to %r(\Ahttp://example.org)</pre>
+<span class="ruby-comment"># expect that the redirection matches the regular expression</span>
+<span class="ruby-identifier">must_redirect_to</span> <span class="ruby-regexp">%r(\Ahttp://example.org)</span>
+</pre>
 
 <p>See also <a
 href="../../ActionController/TestCase.html#method-i-assert_redirected_to">ActionController::TestCase#assert_redirected_to</a>
@@ -445,32 +445,34 @@ ActionDispatch::IntegrationTest#assert_redirected_to</p>
           <p>Expects that the request was rendered with the appropriate template file or
 partials.</p>
 
-<pre># expect that the &quot;new&quot; view template was rendered
-must_render_template &quot;new&quot;
+<pre class="ruby"><span class="ruby-comment"># expect that the &quot;new&quot; view template was rendered</span>
+<span class="ruby-identifier">must_render_template</span> <span class="ruby-string">&quot;new&quot;</span>
 
-# expect that the exact template &quot;admin/posts/new&quot; was rendered
-must_render_template %r{\Aadmin/posts/new\Z}
+<span class="ruby-comment"># expect that the exact template &quot;admin/posts/new&quot; was rendered</span>
+<span class="ruby-identifier">must_render_template</span> <span class="ruby-regexp">%r{\Aadmin/posts/new\Z}</span>
 
-# expect that the layout &#39;admin&#39; was rendered
-must_render_template layout: &#39;admin&#39;
-must_render_template layout: &#39;layouts/admin&#39;
-must_render_template layout: :admin
+<span class="ruby-comment"># expect that the layout &#39;admin&#39; was rendered</span>
+<span class="ruby-identifier">must_render_template</span> <span class="ruby-identifier">layout</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;admin&#39;</span>
+<span class="ruby-identifier">must_render_template</span> <span class="ruby-identifier">layout</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;layouts/admin&#39;</span>
+<span class="ruby-identifier">must_render_template</span> <span class="ruby-identifier">layout</span><span class="ruby-operator">:</span> :<span class="ruby-identifier">admin</span>
 
-# expect that no layout was rendered
-must_render_template layout: nil
-must_render_template layout: false
+<span class="ruby-comment"># expect that no layout was rendered</span>
+<span class="ruby-identifier">must_render_template</span> <span class="ruby-identifier">layout</span><span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-identifier">must_render_template</span> <span class="ruby-identifier">layout</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
 
-# expect that the &quot;_customer&quot; partial was rendered twice
-must_render_template partial: &#39;_customer&#39;, count: 2
+<span class="ruby-comment"># expect that the &quot;_customer&quot; partial was rendered twice</span>
+<span class="ruby-identifier">must_render_template</span> <span class="ruby-identifier">partial</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;_customer&#39;</span>, <span class="ruby-identifier">count</span><span class="ruby-operator">:</span> <span class="ruby-value">2</span>
 
-# expect that no partials were rendered
-must_render_template partial: false</pre>
+<span class="ruby-comment"># expect that no partials were rendered</span>
+<span class="ruby-identifier">must_render_template</span> <span class="ruby-identifier">partial</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+</pre>
 
 <p>In a view test case, you can also expect that specific locals are passed to
 partials:</p>
 
-<pre># expect that the &quot;_customer&quot; partial was rendered with a specific object
-must_render_template partial: &#39;_customer&#39;, locals: { customer: @customer }</pre>
+<pre class="ruby"><span class="ruby-comment"># expect that the &quot;_customer&quot; partial was rendered with a specific object</span>
+<span class="ruby-identifier">must_render_template</span> <span class="ruby-identifier">partial</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;_customer&#39;</span>, <span class="ruby-identifier">locals</span><span class="ruby-operator">:</span> { <span class="ruby-identifier">customer</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@customer</span> }
+</pre>
 
 <p>See also <a
 href="../../ActionController/TestCase.html#method-i-assert_template">ActionController::TestCase#assert_template</a>
@@ -525,13 +527,14 @@ ActionDispatch::IntegrationTest#assert_template</p>
 <code>assert_response(:not_implemented)</code>. See
 Rack::Utils::SYMBOL_TO_STATUS_CODE for a full list.</p>
 
-<pre># expect that the response was a redirection
-must_respond_with :redirect
-response.must_respond_with :redirect
+<pre class="ruby"><span class="ruby-comment"># expect that the response was a redirection</span>
+<span class="ruby-identifier">must_respond_with</span> :<span class="ruby-identifier">redirect</span>
+<span class="ruby-identifier">response</span>.<span class="ruby-identifier">must_respond_with</span> :<span class="ruby-identifier">redirect</span>
 
-# expect that the response code was status code 401 (unauthorized)
-must_respond_with 401
-response.must_respond_with 401</pre>
+<span class="ruby-comment"># expect that the response code was status code 401 (unauthorized)</span>
+<span class="ruby-identifier">must_respond_with</span> <span class="ruby-value">401</span>
+<span class="ruby-identifier">response</span>.<span class="ruby-identifier">must_respond_with</span> <span class="ruby-value">401</span>
+</pre>
 
 <p>See also <a
 href="../../ActionController/TestCase.html#method-i-assert_response">ActionController::TestCase#assert_response</a>
@@ -581,20 +584,21 @@ normally be provided as a query string to the action. The
 <code>message</code> parameter allows you to specify a custom error message
 to display upon failure.</p>
 
-<pre># Expect a basic route: a controller with the default action (index)
-{ controller: &#39;home&#39;, action: &#39;index&#39; }.must_route_for &#39;/home&#39;
+<pre class="ruby"><span class="ruby-comment"># Expect a basic route: a controller with the default action (index)</span>
+{ <span class="ruby-identifier">controller</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;home&#39;</span>, <span class="ruby-identifier">action</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;index&#39;</span> }.<span class="ruby-identifier">must_route_for</span> <span class="ruby-string">&#39;/home&#39;</span>
 
-# Test a route generated with a specific controller, action, and parameter (id)
-{ controller: &#39;entries&#39;, action: &#39;show&#39;, id: 23 }.must_route_for &#39;/entries/show/23&#39;
+<span class="ruby-comment"># Test a route generated with a specific controller, action, and parameter (id)</span>
+{ <span class="ruby-identifier">controller</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;entries&#39;</span>, <span class="ruby-identifier">action</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;show&#39;</span>, <span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-value">23</span> }.<span class="ruby-identifier">must_route_for</span> <span class="ruby-string">&#39;/entries/show/23&#39;</span>
 
-# Expect a basic route (controller + default action), with an error message if it fails
-{ controller: &#39;store&#39;, action: &#39;index&#39; }.must_route_for &#39;/store&#39;
+<span class="ruby-comment"># Expect a basic route (controller + default action), with an error message if it fails</span>
+{ <span class="ruby-identifier">controller</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;store&#39;</span>, <span class="ruby-identifier">action</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;index&#39;</span> }.<span class="ruby-identifier">must_route_for</span> <span class="ruby-string">&#39;/store&#39;</span>
 
-# Tests a route, providing a defaults hash
-{id: &quot;9&quot;, item: &quot;square&quot;}.must_route_for &#39;controller/action/9&#39;, {controller: &quot;controller&quot;, action: &quot;action&quot;}, {}, {item: &quot;square&quot;}
+<span class="ruby-comment"># Tests a route, providing a defaults hash</span>
+{<span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;9&quot;</span>, <span class="ruby-identifier">item</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;square&quot;</span>}.<span class="ruby-identifier">must_route_for</span> <span class="ruby-string">&#39;controller/action/9&#39;</span>, {<span class="ruby-identifier">controller</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;controller&quot;</span>, <span class="ruby-identifier">action</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;action&quot;</span>}, {}, {<span class="ruby-identifier">item</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;square&quot;</span>}
 
-# Tests a route with a HTTP method
-{ controller: &quot;product&quot;, action: &quot;update&quot;, id: &quot;321&quot; }.must_route_for({ method: &#39;put&#39;, path: &#39;/product/321&#39; })</pre>
+<span class="ruby-comment"># Tests a route with a HTTP method</span>
+{ <span class="ruby-identifier">controller</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;product&quot;</span>, <span class="ruby-identifier">action</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;update&quot;</span>, <span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;321&quot;</span> }.<span class="ruby-identifier">must_route_for</span>({ <span class="ruby-identifier">method</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;put&#39;</span>, <span class="ruby-identifier">path</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;/product/321&#39;</span> })
+</pre>
 
 <p>See also <a
 href="../../ActionController/TestCase.html#method-i-assert_routing">ActionController::TestCase#assert_routing</a>
@@ -643,17 +647,18 @@ message for assertion failures.</p>
 
 <p>The <code>defaults</code> parameter is unused.</p>
 
-<pre># Expects that the default action is generated for a route with no action
-{controller: &quot;items&quot;, action: &quot;index&quot;}.must_route_from &quot;/items&quot;
+<pre class="ruby"><span class="ruby-comment"># Expects that the default action is generated for a route with no action</span>
+{<span class="ruby-identifier">controller</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;items&quot;</span>, <span class="ruby-identifier">action</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;index&quot;</span>}.<span class="ruby-identifier">must_route_from</span> <span class="ruby-string">&quot;/items&quot;</span>
 
-# Tests that the list action is properly routed
-{controller: &quot;items&quot;, action: &quot;list&quot;}.must_route_to &quot;/items/list&quot;
+<span class="ruby-comment"># Tests that the list action is properly routed</span>
+{<span class="ruby-identifier">controller</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;items&quot;</span>, <span class="ruby-identifier">action</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;list&quot;</span>}.<span class="ruby-identifier">must_route_to</span> <span class="ruby-string">&quot;/items/list&quot;</span>
 
-# Tests the generation of a route with a parameter
-{ controller: &quot;items&quot;, action: &quot;list&quot;, id: &quot;1&quot; }.must_route_from &quot;/items/list/1&quot;
+<span class="ruby-comment"># Tests the generation of a route with a parameter</span>
+{ <span class="ruby-identifier">controller</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;items&quot;</span>, <span class="ruby-identifier">action</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;list&quot;</span>, <span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;1&quot;</span> }.<span class="ruby-identifier">must_route_from</span> <span class="ruby-string">&quot;/items/list/1&quot;</span>
 
-# Expects that the generated route gives us our custom route
-{ controller: &#39;scm&#39;, action: &#39;show_diff&#39;, revision: &quot;12&quot; }.must_route_from &quot;changesets/12&quot;</pre>
+<span class="ruby-comment"># Expects that the generated route gives us our custom route</span>
+{ <span class="ruby-identifier">controller</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;scm&#39;</span>, <span class="ruby-identifier">action</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;show_diff&#39;</span>, <span class="ruby-identifier">revision</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;12&quot;</span> }.<span class="ruby-identifier">must_route_from</span> <span class="ruby-string">&quot;changesets/12&quot;</span>
+</pre>
 
 <p>See also <a
 href="../../ActionController/TestCase.html#method-i-assert_generates">ActionController::TestCase#assert_generates</a>
@@ -710,7 +715,7 @@ of elements selected by the enclosing expectation. Alternatively the array
 may be iterated through so that <code>must_select</code> can be called
 separately for each element.</p>
 
-<h4 id="method-i-must_select-label-Example">Example<span><a href="#method-i-must_select-label-Example">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<h4 id="method-i-must_select-label-Example">Example<span><a href="#method-i-must_select-label-Example">&para;</a> <a href="#top">&uarr;</a></span></h4>
 
 <p>If the response contains two ordered lists, each with four list elements
 then:</p>
@@ -724,14 +729,15 @@ then:</p>
 
 <p>will pass, as will:</p>
 
-<pre>must_select &quot;ol&quot; do
-  must_select &quot;li&quot;, 8
-end</pre>
+<pre class="ruby"><span class="ruby-identifier">must_select</span> <span class="ruby-string">&quot;ol&quot;</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">must_select</span> <span class="ruby-string">&quot;li&quot;</span>, <span class="ruby-value">8</span>
+<span class="ruby-keyword">end</span>
+</pre>
 
 <p>The selector may be a CSS selector expression (String), an expression with
 substitution values, or an HTML::Selector object.</p>
 
-<h3 id="method-i-must_select-label-Equality+Tests">Equality Tests<span><a href="#method-i-must_select-label-Equality+Tests">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="method-i-must_select-label-Equality+Tests">Equality Tests<span><a href="#method-i-must_select-label-Equality+Tests">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
 <p>The equality test may be one of the following:</p>
 <ul><li>
@@ -774,32 +780,33 @@ elements is at most this value.</p>
 <p>If the method is called with a block, once all equality tests are evaluated
 the block is called with an array of all matched elements.</p>
 
-<pre># At least one form element
-must_select &quot;form&quot;
+<pre class="ruby"><span class="ruby-comment"># At least one form element</span>
+<span class="ruby-identifier">must_select</span> <span class="ruby-string">&quot;form&quot;</span>
 
-# Form element includes four input fields
-must_select &quot;form input&quot;, 4
+<span class="ruby-comment"># Form element includes four input fields</span>
+<span class="ruby-identifier">must_select</span> <span class="ruby-string">&quot;form input&quot;</span>, <span class="ruby-value">4</span>
 
-# Page title is &quot;Welcome&quot;
-must_select &quot;title&quot;, &quot;Welcome&quot;
+<span class="ruby-comment"># Page title is &quot;Welcome&quot;</span>
+<span class="ruby-identifier">must_select</span> <span class="ruby-string">&quot;title&quot;</span>, <span class="ruby-string">&quot;Welcome&quot;</span>
 
-# Page title is &quot;Welcome&quot; and there is only one title element
-must_select &quot;title&quot;, {count: 1, text: &quot;Welcome&quot;},
-    &quot;Wrong title or more than one title element&quot;
+<span class="ruby-comment"># Page title is &quot;Welcome&quot; and there is only one title element</span>
+<span class="ruby-identifier">must_select</span> <span class="ruby-string">&quot;title&quot;</span>, {<span class="ruby-identifier">count</span><span class="ruby-operator">:</span> <span class="ruby-value">1</span>, <span class="ruby-identifier">text</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;Welcome&quot;</span>},
+    <span class="ruby-string">&quot;Wrong title or more than one title element&quot;</span>
 
-# Page contains no forms
-must_select &quot;form&quot;, false, &quot;This page must contain no forms&quot;
+<span class="ruby-comment"># Page contains no forms</span>
+<span class="ruby-identifier">must_select</span> <span class="ruby-string">&quot;form&quot;</span>, <span class="ruby-keyword">false</span>, <span class="ruby-string">&quot;This page must contain no forms&quot;</span>
 
-# Test the content and style
-must_select &quot;body div.header ul.menu&quot;
+<span class="ruby-comment"># Test the content and style</span>
+<span class="ruby-identifier">must_select</span> <span class="ruby-string">&quot;body div.header ul.menu&quot;</span>
 
-# Use substitution values
-must_select &quot;ol&gt;li#?&quot;, /item-\d+/
+<span class="ruby-comment"># Use substitution values</span>
+<span class="ruby-identifier">must_select</span> <span class="ruby-node">&quot;ol&gt;li#?&quot;</span>, <span class="ruby-regexp">/item-\d+/</span>
 
-# All input fields in the form have a name
-must_select &quot;form input&quot; do
-  must_select &quot;[name=?]&quot;, /.+/  # Not empty
-end</pre>
+<span class="ruby-comment"># All input fields in the form have a name</span>
+<span class="ruby-identifier">must_select</span> <span class="ruby-string">&quot;form input&quot;</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">must_select</span> <span class="ruby-string">&quot;[name=?]&quot;</span>, <span class="ruby-regexp">/.+/</span>  <span class="ruby-comment"># Not empty</span>
+<span class="ruby-keyword">end</span>
+</pre>
 
 <p>See also <a
 href="../../ActionController/TestCase.html#method-i-assert_select">ActionController::TestCase#assert_select</a>
@@ -842,18 +849,19 @@ ActionDispatch::IntegrationTest#assert_select</p>
 
 <p>You must enable deliveries for this expectation to work, use:</p>
 
-<pre> ActionMailer::Base.perform_deliveries = true
+<pre class="ruby"> <span class="ruby-constant">ActionMailer</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">perform_deliveries</span> = <span class="ruby-keyword">true</span>
 
-must_select_email do
-  must_select &quot;h1&quot;, &quot;Email alert&quot;
-end
+<span class="ruby-identifier">must_select_email</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">must_select</span> <span class="ruby-string">&quot;h1&quot;</span>, <span class="ruby-string">&quot;Email alert&quot;</span>
+<span class="ruby-keyword">end</span>
 
-must_select_email do
-  items = must_select &quot;ol&gt;li&quot;
-  items.each do
-     # Work with items here...
-  end
-end</pre>
+<span class="ruby-identifier">must_select_email</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">items</span> = <span class="ruby-identifier">must_select</span> <span class="ruby-string">&quot;ol&gt;li&quot;</span>
+  <span class="ruby-identifier">items</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span>
+     <span class="ruby-comment"># Work with items here...</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
 
 <p>See also <a
 href="../../ActionController/TestCase.html#method-i-assert_select_email">ActionController::TestCase#assert_select_email</a>
@@ -902,27 +910,28 @@ elements.</p>
 <p>The content of each element is un-encoded, and wrapped in the root element
 <code>encoded</code>. It then calls the block with all un-encoded elements.</p>
 
-<pre># Selects all bold tags from within the title of an Atom feed&#39;s entries (perhaps to nab a section name prefix)
-must_select &quot;feed[xmlns=&#39;http://www.w3.org/2005/Atom&#39;]&quot; do
-  # Select each entry item and then the title item
-  must_select &quot;entry&gt;title&quot; do
-    # Run expectations on the encoded title elements
-    must_select_encoded do
-      must_select &quot;b&quot;
-    end
-  end
-end
+<pre class="ruby"><span class="ruby-comment"># Selects all bold tags from within the title of an Atom feed&#39;s entries (perhaps to nab a section name prefix)</span>
+<span class="ruby-identifier">must_select</span> <span class="ruby-string">&quot;feed[xmlns=&#39;http://www.w3.org/2005/Atom&#39;]&quot;</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-comment"># Select each entry item and then the title item</span>
+  <span class="ruby-identifier">must_select</span> <span class="ruby-string">&quot;entry&gt;title&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-comment"># Run expectations on the encoded title elements</span>
+    <span class="ruby-identifier">must_select_encoded</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">must_select</span> <span class="ruby-string">&quot;b&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
 
-# Selects all paragraph tags from within the description of an RSS feed
-must_select &quot;rss[version=2.0]&quot; do
-  # Select description element of each feed item.
-  must_select &quot;channel&gt;item&gt;description&quot; do
-    # Run expectations on the encoded elements.
-    must_select_encoded do
-      must_select &quot;p&quot;
-    end
-  end
-end</pre>
+<span class="ruby-comment"># Selects all paragraph tags from within the description of an RSS feed</span>
+<span class="ruby-identifier">must_select</span> <span class="ruby-string">&quot;rss[version=2.0]&quot;</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-comment"># Select description element of each feed item.</span>
+  <span class="ruby-identifier">must_select</span> <span class="ruby-string">&quot;channel&gt;item&gt;description&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-comment"># Run expectations on the encoded elements.</span>
+    <span class="ruby-identifier">must_select_encoded</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">must_select</span> <span class="ruby-string">&quot;p&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
 
 <p>See also <a
 href="../../ActionController/TestCase.html#method-i-assert_select_encoded">ActionController::TestCase#assert_select_encoded</a>
@@ -961,7 +970,8 @@ ActionDispatch::IntegrationTest#assert_select_encoded</p>
           <p>Checks that the numeric result of evaluating an expression is not changed
 before and after invoking.</p>
 
-<pre>lambda { User.new }.wont_change &quot;User.count&quot;</pre>
+<pre class="ruby"><span class="ruby-identifier">lambda</span> { <span class="ruby-constant">User</span>.<span class="ruby-identifier">new</span> }.<span class="ruby-identifier">wont_change</span> <span class="ruby-string">&quot;User.count&quot;</span>
+</pre>
 
 <p>See also <a
 href="../../ActiveSupport/TestCase.html#method-i-refute_difference">ActiveSupport::TestCase#refute_difference</a></p>
@@ -999,8 +1009,9 @@ href="../../ActiveSupport/TestCase.html#method-i-refute_difference">ActiveSuppor
           <p>Checks that the numeric result of evaluating an expression is not changed
 before and after invoking.</p>
 
-<pre>orange_link = &#39;&lt;a href=&quot;http://www.example.com&quot;&gt;Oranges&lt;/a&gt;&#39;
-link_to(&quot;Apples&quot;, &quot;http://www.example.com&quot;).wont_dom_equal orange_link</pre>
+<pre class="ruby"><span class="ruby-identifier">orange_link</span> = <span class="ruby-string">&#39;&lt;a href=&quot;http://www.example.com&quot;&gt;Oranges&lt;/a&gt;&#39;</span>
+<span class="ruby-identifier">link_to</span>(<span class="ruby-string">&quot;Apples&quot;</span>, <span class="ruby-string">&quot;http://www.example.com&quot;</span>).<span class="ruby-identifier">wont_dom_equal</span> <span class="ruby-identifier">orange_link</span>
+</pre>
 
 <p>See also <a
 href="../../ActionController/TestCase.html#method-i-refute_dom_equal">ActionController::TestCase#refute_dom_equal</a>
@@ -1047,16 +1058,17 @@ ActionDispatch::IntegrationTest#assert_dom_not_equal</p>
 does <em>not</em> exist. (See <code>must_have_tag</code> for a full
 discussion of the syntax.)</p>
 
-<pre># Expect that there is not a &quot;div&quot; containing a &quot;p&quot;
-wont_have_tag tag: &quot;div&quot;, descendant: { tag: &quot;p&quot; }
+<pre class="ruby"><span class="ruby-comment"># Expect that there is not a &quot;div&quot; containing a &quot;p&quot;</span>
+<span class="ruby-identifier">wont_have_tag</span> <span class="ruby-identifier">tag</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-identifier">descendant</span><span class="ruby-operator">:</span> { <span class="ruby-identifier">tag</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;p&quot;</span> }
 
-# Expect that an unordered list is empty
-wont_have_tag tag: &quot;ul&quot;, descendant: { tag: &quot;li&quot; }
+<span class="ruby-comment"># Expect that an unordered list is empty</span>
+<span class="ruby-identifier">wont_have_tag</span> <span class="ruby-identifier">tag</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;ul&quot;</span>, <span class="ruby-identifier">descendant</span><span class="ruby-operator">:</span> { <span class="ruby-identifier">tag</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;li&quot;</span> }
 
-# Expect that there is not a &quot;p&quot; tag with between 1 to 3 &quot;img&quot; tags
-# as immediate children
-wont_have_tag tag: &quot;p&quot;,
-           children: { count: 1..3, only: { tag: &quot;img&quot; } }</pre>
+<span class="ruby-comment"># Expect that there is not a &quot;p&quot; tag with between 1 to 3 &quot;img&quot; tags</span>
+<span class="ruby-comment"># as immediate children</span>
+<span class="ruby-identifier">wont_have_tag</span> <span class="ruby-identifier">tag</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;p&quot;</span>,
+           <span class="ruby-identifier">children</span><span class="ruby-operator">:</span> { <span class="ruby-identifier">count</span><span class="ruby-operator">:</span> <span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">3</span>, <span class="ruby-identifier">only</span><span class="ruby-operator">:</span> { <span class="ruby-identifier">tag</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;img&quot;</span> } }
+</pre>
 
 <p>See also <a
 href="../../ActionController/TestCase.html#method-i-refute_tag">ActionController::TestCase#refute_tag</a>
@@ -1090,7 +1102,7 @@ ActionDispatch::IntegrationTest#assert_no_tag</p>
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
-  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 
