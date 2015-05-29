@@ -4,17 +4,17 @@
 <head>
 <meta charset="UTF-8">
 
-<title>module Minitest::Rails - minitest-rails-2.2.0 Documentation</title>
+<title>module Minitest::Rails::Expectations::ActiveJob - minitest-rails-2.2.0 Documentation</title>
 
 <script type="text/javascript">
-  var rdoc_rel_prefix = "../";
+  var rdoc_rel_prefix = "../../../";
 </script>
 
-<script src="../js/jquery.js"></script>
-<script src="../js/darkfish.js"></script>
+<script src="../../../js/jquery.js"></script>
+<script src="../../../js/darkfish.js"></script>
 
-<link href="../css/fonts.css" rel="stylesheet">
-<link href="../css/rdoc.css" rel="stylesheet">
+<link href="../../../css/fonts.css" rel="stylesheet">
+<link href="../../../css/rdoc.css" rel="stylesheet">
 
 
 
@@ -23,13 +23,13 @@
   <div id="project-navigation">
     <div id="home-section" role="region" title="Quick navigation" class="nav-section">
   <h2>
-    <a href="../index.html" rel="home">Home</a>
+    <a href="../../../index.html" rel="home">Home</a>
   </h2>
 
   <div id="table-of-contents-navigation">
-    <a href="../table_of_contents.html#pages">Pages</a>
-    <a href="../table_of_contents.html#classes">Classes</a>
-    <a href="../table_of_contents.html#methods">Methods</a>
+    <a href="../../../table_of_contents.html#pages">Pages</a>
+    <a href="../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../table_of_contents.html#methods">Methods</a>
   </div>
 </div>
 
@@ -55,19 +55,46 @@
   <div id="class-metadata">
     
     
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">::ActiveJob::TestHelper</span>
+  
+  
+  </ul>
+</div>
+
+    <div id="extends-section" class="nav-section">
+  <h3>Extended With Modules</h3>
+
+  <ul class="link-list">
     
-    
+  
+    <li><span class="extend">ActiveSupport::Concern</span>
+  
+  
+  </ul>
+</div>
+
     
   </div>
 </nav>
 
-<main role="main" aria-labelledby="module-Minitest::Rails">
-  <h1 id="module-Minitest::Rails" class="module">
-    module Minitest::Rails
+<main role="main" aria-labelledby="module-Minitest::Rails::Expectations::ActiveJob">
+  <h1 id="module-Minitest::Rails::Expectations::ActiveJob" class="module">
+    module Minitest::Rails::Expectations::ActiveJob
   </h1>
 
   <section class="description">
     
+<p>This exists as a module to allow easy mixing into classes other than <a
+href="../../../ActiveJob/TestCase.html">ActiveJob::TestCase</a> where you
+might want to do job testing e.g. in an Active Record model which triggers
+jobs in a callback.</p>
+
   </section>
 
   
@@ -78,20 +105,6 @@
 
     
 
-    
-    <section class="constants-list">
-      <header>
-        <h3>Constants</h3>
-      </header>
-      <dl>
-      
-        <dt id="VERSION">VERSION
-        
-        <dd>
-        
-      
-      </dl>
-    </section>
     
 
     

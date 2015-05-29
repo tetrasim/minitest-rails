@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>class Rails::Generators::TestCase - minitest-rails-2.1.1 Documentation</title>
+<title>class Rails::Generators::TestCase - minitest-rails-2.2.0 Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
@@ -125,7 +125,7 @@
 
           
           <div class="method-source-code" id="determine_default_generator-source">
-            <pre><span class="ruby-comment"># File lib/minitest/rails.rb, line 120</span>
+            <pre><span class="ruby-comment"># File lib/minitest/rails.rb, line 133</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">determine_default_generator</span>(<span class="ruby-identifier">name</span>)
   <span class="ruby-identifier">generator</span> = <span class="ruby-identifier">determine_constant_from_test_name</span>(<span class="ruby-identifier">name</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">constant</span><span class="ruby-operator">|</span>
     <span class="ruby-constant">Class</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">constant</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">constant</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Rails</span><span class="ruby-operator">::</span><span class="ruby-constant">Generators</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>

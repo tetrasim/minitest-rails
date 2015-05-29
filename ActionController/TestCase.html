@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>class ActionController::TestCase - minitest-rails-2.1.1 Documentation</title>
+<title>class ActionController::TestCase - minitest-rails-2.2.0 Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../";
@@ -97,6 +97,18 @@
     <li ><a href="#method-i-assert_tag">#assert_tag</a>
     
     <li ><a href="#method-i-assert_template">#assert_template</a>
+    
+    <li ><a href="#method-i-delete">#delete</a>
+    
+    <li ><a href="#method-i-get">#get</a>
+    
+    <li ><a href="#method-i-head">#head</a>
+    
+    <li ><a href="#method-i-patch">#patch</a>
+    
+    <li ><a href="#method-i-post">#post</a>
+    
+    <li ><a href="#method-i-put">#put</a>
     
     <li ><a href="#method-i-refute_dom_equal">#refute_dom_equal</a>
     
@@ -357,8 +369,7 @@ the syntax.)</p>
            <span class="ruby-identifier">children</span><span class="ruby-operator">:</span> { <span class="ruby-identifier">count</span><span class="ruby-operator">:</span> <span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">3</span>, <span class="ruby-identifier">only</span><span class="ruby-operator">:</span> { <span class="ruby-identifier">tag</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;img&quot;</span> } }
 </pre>
 
-<p>See also <a
-href="../Minitest/Rails/Expectations.html#method-i-wont_have_tag">Minitest::Rails::Expectations#wont_have_tag</a></p>
+<p>See also Minitest::Rails::Expectations#wont_have_tag</p>
           
           
 
@@ -1116,6 +1127,251 @@ href="../Minitest/Rails/Expectations.html#method-i-must_render_template">Minites
       </div>
 
     
+      <div id="method-i-delete" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            delete(action, *args)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Simulate a DELETE request with the given parameters and set/volley the
+response. See <code>get</code> for more details.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="delete-source">
+            <pre><span class="ruby-comment"># File lib/minitest/rails/assertions.rb, line 592</span>
+  </pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            get(action, *args)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Simulate a GET request with the given parameters.</p>
+<ul><li>
+<p><code>action</code>: The controller action to call.</p>
+</li><li>
+<p><code>params</code>: The hash with HTTP parameters that you want to pass.
+This may be</p>
+</li></ul>
+
+<p><code>nil</code>.</p>
+<ul><li>
+<p><code>body</code>: The request body with a string that is appropriately
+encoded (<code>application/x-www-form-urlencoded</code> or
+<code>multipart/form-data</code>).</p>
+</li><li>
+<p><code>session</code>: A hash of parameters to store in the session. This
+may be</p>
+</li></ul>
+
+<p><code>nil</code>.</p>
+<ul><li>
+<p><code>flash</code>: A hash of parameters to store in the flash. This may be
+<code>nil</code>.</p>
+</li></ul>
+
+<p>You can also simulate POST, PATCH, PUT, DELETE, and HEAD requests with
+<code>post</code>, <code>patch</code>, <code>put</code>,
+<code>delete</code>, and <code>head</code>. Example sending parameters,
+session and setting a flash message:</p>
+
+<pre class="ruby"><span class="ruby-identifier">get</span> :<span class="ruby-identifier">show</span>,
+  <span class="ruby-identifier">params</span><span class="ruby-operator">:</span> { <span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-value">7</span> },
+  <span class="ruby-identifier">session</span><span class="ruby-operator">:</span> { <span class="ruby-identifier">user_id</span><span class="ruby-operator">:</span> <span class="ruby-value">1</span> },
+  <span class="ruby-identifier">flash</span><span class="ruby-operator">:</span> { <span class="ruby-identifier">notice</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;This is a flash message&#39;</span> }
+</pre>
+
+<p>Note that the request method is not verified. The different methods are
+available to make the tests more expressive.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get-source">
+            <pre><span class="ruby-comment"># File lib/minitest/rails/assertions.rb, line 560</span>
+  </pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-head" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            head(action, *args)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Simulate a HEAD request with the given parameters and set/volley the
+response. See <code>get</code> for more details.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="head-source">
+            <pre><span class="ruby-comment"># File lib/minitest/rails/assertions.rb, line 599</span>
+</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-patch" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            patch(action, *args)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Simulate a PATCH request with the given parameters and set/volley the
+response. See <code>get</code> for more details.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="patch-source">
+            <pre><span class="ruby-comment"># File lib/minitest/rails/assertions.rb, line 576</span>
+  </pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-post" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            post(action, *args)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Simulate a POST request with the given parameters and set/volley the
+response. See <code>get</code> for more details.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="post-source">
+            <pre><span class="ruby-comment"># File lib/minitest/rails/assertions.rb, line 568</span>
+  </pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-put" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            put(action, *args)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Simulate a PUT request with the given parameters and set/volley the
+response. See <code>get</code> for more details.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="put-source">
+            <pre><span class="ruby-comment"># File lib/minitest/rails/assertions.rb, line 584</span>
+  </pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
       <div id="method-i-refute_dom_equal" class="method-detail method-alias">
         
         <div class="method-heading">
@@ -1185,8 +1441,7 @@ the syntax.)</p>
            <span class="ruby-identifier">children</span><span class="ruby-operator">:</span> { <span class="ruby-identifier">count</span><span class="ruby-operator">:</span> <span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">3</span>, <span class="ruby-identifier">only</span><span class="ruby-operator">:</span> { <span class="ruby-identifier">tag</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;img&quot;</span> } }
 </pre>
 
-<p>See also <a
-href="../Minitest/Rails/Expectations.html#method-i-wont_have_tag">Minitest::Rails::Expectations#wont_have_tag</a></p>
+<p>See also Minitest::Rails::Expectations#wont_have_tag</p>
 
 <p>:method: <a href="TestCase.html#method-i-refute_tag">#refute_tag</a>
 :call-seq: <a

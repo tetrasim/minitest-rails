@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>Table of Contents - minitest-rails-2.1.1 Documentation</title>
+<title>Table of Contents - minitest-rails-2.2.0 Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
@@ -20,7 +20,7 @@
 
 <body id="top" class="table-of-contents">
 <main role="main">
-<h1 class="class">Table of Contents - minitest-rails-2.1.1 Documentation</h1>
+<h1 class="class">Table of Contents - minitest-rails-2.2.0 Documentation</h1>
 
 <h2 id="pages">Pages</h2>
 <ul>
@@ -28,6 +28,7 @@
     <a href="CHANGELOG_rdoc.html">CHANGELOG</a>
 
     <ul>
+      <li><a href="CHANGELOG_rdoc.html#label-2.2.0+-2F+2015-05-29">2.2.0 / 2015-05-29</a>
       <li><a href="CHANGELOG_rdoc.html#label-2.1.1+-2F+2014-10-28">2.1.1 / 2014-10-28</a>
       <li><a href="CHANGELOG_rdoc.html#label-2.1.0+-2F+2014-07-08">2.1.0 / 2014-07-08</a>
       <li><a href="CHANGELOG_rdoc.html#label-2.0.3+-2F+2014-06-11">2.0.3 / 2014-06-11</a>
@@ -95,6 +96,9 @@
   <li class="class">
     <a href="ActionView/TestCase.html">ActionView::TestCase</a>
   </li>
+  <li class="class">
+    <a href="ActiveJob/TestCase.html">ActiveJob::TestCase</a>
+  </li>
   <li class="module">
     <a href="ActiveSupport.html">ActiveSupport</a>
   </li>
@@ -115,6 +119,9 @@
   </li>
   <li class="module">
     <a href="Minitest/Rails/Expectations.html">Minitest::Rails::Expectations</a>
+  </li>
+  <li class="module">
+    <a href="Minitest/Rails/Expectations/ActiveJob.html">Minitest::Rails::Expectations::ActiveJob</a>
   </li>
   <li class="class">
     <a href="Minitest/Rails/Railtie.html">Minitest::Rails::Railtie</a>
@@ -182,6 +189,16 @@
     <span class="container">ActionController::TestCase</span>
 
   <li class="method">
+    <a href="ActiveJob/TestCase.html#method-i-assert_enqueued_jobs">#assert_enqueued_jobs</a>
+    &mdash;
+    <span class="container">ActiveJob::TestCase</span>
+
+  <li class="method">
+    <a href="ActiveJob/TestCase.html#method-i-assert_enqueued_with">#assert_enqueued_with</a>
+    &mdash;
+    <span class="container">ActiveJob::TestCase</span>
+
+  <li class="method">
     <a href="ActionController/TestCase.html#method-i-assert_generates">#assert_generates</a>
     &mdash;
     <span class="container">ActionController::TestCase</span>
@@ -202,9 +219,29 @@
     <span class="container">ActionView::TestCase</span>
 
   <li class="method">
+    <a href="ActiveJob/TestCase.html#method-i-assert_no_enqueued_jobs">#assert_no_enqueued_jobs</a>
+    &mdash;
+    <span class="container">ActiveJob::TestCase</span>
+
+  <li class="method">
+    <a href="ActiveJob/TestCase.html#method-i-assert_no_performed_jobs">#assert_no_performed_jobs</a>
+    &mdash;
+    <span class="container">ActiveJob::TestCase</span>
+
+  <li class="method">
     <a href="ActionController/TestCase.html#method-i-assert_no_tag">#assert_no_tag</a>
     &mdash;
     <span class="container">ActionController::TestCase</span>
+
+  <li class="method">
+    <a href="ActiveJob/TestCase.html#method-i-assert_performed_jobs">#assert_performed_jobs</a>
+    &mdash;
+    <span class="container">ActiveJob::TestCase</span>
+
+  <li class="method">
+    <a href="ActiveJob/TestCase.html#method-i-assert_performed_with">#assert_performed_with</a>
+    &mdash;
+    <span class="container">ActiveJob::TestCase</span>
 
   <li class="method">
     <a href="ActionController/TestCase.html#method-i-assert_recognizes">#assert_recognizes</a>
@@ -252,6 +289,21 @@
     <span class="container">ActionController::TestCase</span>
 
   <li class="method">
+    <a href="ActionController/TestCase.html#method-i-delete">#delete</a>
+    &mdash;
+    <span class="container">ActionController::TestCase</span>
+
+  <li class="method">
+    <a href="ActionController/TestCase.html#method-i-get">#get</a>
+    &mdash;
+    <span class="container">ActionController::TestCase</span>
+
+  <li class="method">
+    <a href="ActionController/TestCase.html#method-i-head">#head</a>
+    &mdash;
+    <span class="container">ActionController::TestCase</span>
+
+  <li class="method">
     <a href="Minitest/Rails/Expectations.html#method-i-must_change">#must_change</a>
     &mdash;
     <span class="container">Minitest::Rails::Expectations</span>
@@ -262,7 +314,27 @@
     <span class="container">Minitest::Rails::Expectations</span>
 
   <li class="method">
+    <a href="Minitest/Rails/Expectations.html#method-i-must_enqueue_jobs">#must_enqueue_jobs</a>
+    &mdash;
+    <span class="container">Minitest::Rails::Expectations</span>
+
+  <li class="method">
+    <a href="Minitest/Rails/Expectations.html#method-i-must_enqueue_with">#must_enqueue_with</a>
+    &mdash;
+    <span class="container">Minitest::Rails::Expectations</span>
+
+  <li class="method">
     <a href="Minitest/Rails/Expectations.html#method-i-must_have_tag">#must_have_tag</a>
+    &mdash;
+    <span class="container">Minitest::Rails::Expectations</span>
+
+  <li class="method">
+    <a href="Minitest/Rails/Expectations.html#method-i-must_perform_jobs">#must_perform_jobs</a>
+    &mdash;
+    <span class="container">Minitest::Rails::Expectations</span>
+
+  <li class="method">
+    <a href="Minitest/Rails/Expectations.html#method-i-must_perform_with">#must_perform_with</a>
     &mdash;
     <span class="container">Minitest::Rails::Expectations</span>
 
@@ -307,19 +379,34 @@
     <span class="container">Minitest::Rails::Expectations</span>
 
   <li class="method">
+    <a href="ActionController/TestCase.html#method-i-patch">#patch</a>
+    &mdash;
+    <span class="container">ActionController::TestCase</span>
+
+  <li class="method">
+    <a href="ActionController/TestCase.html#method-i-post">#post</a>
+    &mdash;
+    <span class="container">ActionController::TestCase</span>
+
+  <li class="method">
+    <a href="ActionController/TestCase.html#method-i-put">#put</a>
+    &mdash;
+    <span class="container">ActionController::TestCase</span>
+
+  <li class="method">
     <a href="ActionView/TestCase.html#method-i-refute_difference">#refute_difference</a>
     &mdash;
     <span class="container">ActionView::TestCase</span>
 
   <li class="method">
-    <a href="ActionDispatch/IntegrationTest.html#method-i-refute_difference">#refute_difference</a>
-    &mdash;
-    <span class="container">ActionDispatch::IntegrationTest</span>
-
-  <li class="method">
     <a href="ActiveSupport/TestCase.html#method-i-refute_difference">#refute_difference</a>
     &mdash;
     <span class="container">ActiveSupport::TestCase</span>
+
+  <li class="method">
+    <a href="ActionDispatch/IntegrationTest.html#method-i-refute_difference">#refute_difference</a>
+    &mdash;
+    <span class="container">ActionDispatch::IntegrationTest</span>
 
   <li class="method">
     <a href="ActionController/TestCase.html#method-i-refute_dom_equal">#refute_dom_equal</a>
@@ -342,7 +429,12 @@
     <span class="container">Minitest::Rails::Expectations</span>
 
   <li class="method">
-    <a href="Minitest/Rails/Expectations.html#method-i-wont_have_tag">#wont_have_tag</a>
+    <a href="Minitest/Rails/Expectations.html#method-i-wont_enqueue_jobs">#wont_enqueue_jobs</a>
+    &mdash;
+    <span class="container">Minitest::Rails::Expectations</span>
+
+  <li class="method">
+    <a href="Minitest/Rails/Expectations.html#method-i-wont_perform_jobs">#wont_perform_jobs</a>
     &mdash;
     <span class="container">Minitest::Rails::Expectations</span>
 </ul>
