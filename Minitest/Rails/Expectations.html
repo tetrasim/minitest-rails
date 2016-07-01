@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>module Minitest::Rails::Expectations - minitest-rails-2.2.0 Documentation</title>
+<title>module Minitest::Rails::Expectations - minitest-rails-3.0.0 Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
@@ -71,15 +71,11 @@
     
     <li ><a href="#method-i-must_enqueue_with">#must_enqueue_with</a>
     
-    <li ><a href="#method-i-must_have_tag">#must_have_tag</a>
-    
     <li ><a href="#method-i-must_perform_jobs">#must_perform_jobs</a>
     
     <li ><a href="#method-i-must_perform_with">#must_perform_with</a>
     
     <li ><a href="#method-i-must_redirect_to">#must_redirect_to</a>
-    
-    <li ><a href="#method-i-must_render_template">#must_render_template</a>
     
     <li ><a href="#method-i-must_respond_with">#must_respond_with</a>
     
@@ -200,15 +196,15 @@ evaluated.</p>
 </pre>
 
 <p>See also <a
-href="../../ActionController/TestCase.html#method-i-assert_dom_equal">ActionController::TestCase#assert_dom_equal</a>
-See also ActionView::TestCase#assert_dom_equal See also
-ActionDispatch::IntegrationTest#assert_dom_equal</p>
+href="../../ActionView/TestCase.html#method-i-assert_dom_equal">ActionView::TestCase#assert_dom_equal</a>
+See also <a
+href="../../ActionDispatch/IntegrationTest.html#method-i-assert_dom_equal">ActionDispatch::IntegrationTest#assert_dom_equal</a></p>
           
           
 
           
           <div class="method-source-code" id="must_dom_equal-source">
-            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 394</span>
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 348</span>
 <span class="ruby-identifier">infect_an_assertion</span> <span class="ruby-value">:assert_dom_equal</span>, <span class="ruby-value">:must_dom_equal</span>
 </pre>
           </div>
@@ -270,7 +266,7 @@ href="../../ActiveJob/TestCase.html#method-i-assert_enqueued_jobs">ActiveJob::Te
 
           
           <div class="method-source-code" id="must_enqueue_jobs-source">
-            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 571</span>
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 400</span>
     </pre>
           </div>
           
@@ -314,167 +310,8 @@ arguments.</p>
 
           
           <div class="method-source-code" id="must_enqueue_with-source">
-            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 678</span>
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 507</span>
     </pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
-    
-      <div id="method-i-must_have_tag" class="method-detail ">
-        
-        
-        <div class="method-heading">
-          <span class="method-callseq">
-            must_have_tag(*opts)
-          </span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-        
-
-        <div class="method-description">
-          
-          <p>Expects that there is a tag/node/element in the body of the response that
-meets all of the given conditions. The <code>conditions</code> parameter
-must be a hash of any of the following keys (all are optional):</p>
-<ul><li>
-<p><code>:tag</code>: the node type must match the corresponding value</p>
-</li><li>
-<p><code>:attributes</code>: a hash. The node&#39;s attributes must match the
-corresponding values in the hash.</p>
-</li><li>
-<p><code>:parent</code>: a hash. The node&#39;s parent must match the
-corresponding hash.</p>
-</li><li>
-<p><code>:child</code>: a hash. At least one of the node&#39;s immediate
-children must meet the criteria described by the hash.</p>
-</li><li>
-<p><code>:ancestor</code>: a hash. At least one of the node&#39;s ancestors
-must meet the criteria described by the hash.</p>
-</li><li>
-<p><code>:descendant</code>: a hash. At least one of the node&#39;s
-descendants must meet the criteria described by the hash.</p>
-</li><li>
-<p><code>:sibling</code>: a hash. At least one of the node&#39;s siblings must
-meet the criteria described by the hash.</p>
-</li><li>
-<p><code>:after</code>: a hash. The node must be after any sibling meeting the
-criteria described by the hash, and at least one sibling must match.</p>
-</li><li>
-<p><code>:before</code>: a hash. The node must be before any sibling meeting
-the criteria described by the hash, and at least one sibling must match.</p>
-</li><li>
-<p><code>:children</code>: a hash, for counting children of a node. Accepts
-the keys:</p>
-<ul><li>
-<p><code>:count</code>: either a number or a range which must equal (or
-include) the number of children that match.</p>
-</li><li>
-<p><code>:less_than</code>: the number of matching children must be less than
-this number.</p>
-</li><li>
-<p><code>:greater_than</code>: the number of matching children must be greater
-than this number.</p>
-</li><li>
-<p><code>:only</code>: another hash consisting of the keys to use to match on
-the children, and only matching children will be counted.</p>
-</li></ul>
-</li><li>
-<p><code>:content</code>: the textual content of the node must match the given
-value. This will not match HTML tags in the body of a tag–only text.</p>
-</li></ul>
-
-<p>Conditions are matched using the following algorithm:</p>
-<ul><li>
-<p>if the condition is a string, it must be a substring of the value.</p>
-</li><li>
-<p>if the condition is a regexp, it must match the value.</p>
-</li><li>
-<p>if the condition is a number, the value must match number.to_s.</p>
-</li><li>
-<p>if the condition is <code>true</code>, the value must not be
-<code>nil</code>.</p>
-</li><li>
-<p>if the condition is <code>false</code> or <code>nil</code>, the value must
-be <code>nil</code>.</p>
-
-<p># Expect that there is a “span” tag <a
-href="Expectations.html#method-i-must_have_tag">#must_have_tag</a> tag:
-“span”</p>
-
-<p># Expect that there is a “span” tag with id=“x” <a
-href="Expectations.html#method-i-must_have_tag">#must_have_tag</a> tag:
-“span”, attributes: { id: “x” }</p>
-
-<p># Expect that there is a “span” tag using the short-hand <a
-href="Expectations.html#method-i-must_have_tag">#must_have_tag</a> :span</p>
-
-<p># Expect that there is a “span” tag with id=“x” using the short-hand <a
-href="Expectations.html#method-i-must_have_tag">#must_have_tag</a> :span,
-attributes: { id: “x” }</p>
-
-<p># Expect that there is a “span” inside of a “div” <a
-href="Expectations.html#method-i-must_have_tag">#must_have_tag</a> tag:
-“span”, parent: { tag: “div” }</p>
-
-<p># Expect that there is a “span” somewhere inside a table <a
-href="Expectations.html#method-i-must_have_tag">#must_have_tag</a> tag:
-“span”, ancestor: { tag: “table” }</p>
-
-<p># Expect that there is a “span” with at least one “em” child <a
-href="Expectations.html#method-i-must_have_tag">#must_have_tag</a> tag:
-“span”, child: { tag: “em” }</p>
-
-<p># Expect that there is a “span” containing a (possibly nested) # “strong”
-tag. <a href="Expectations.html#method-i-must_have_tag">#must_have_tag</a>
-tag: “span”, descendant: { tag: “strong” }</p>
-
-<p># Expect that there is a “span” containing between 2 and 4 “em” tags # as
-immediate children <a
-href="Expectations.html#method-i-must_have_tag">#must_have_tag</a> tag:
-“span”,</p>
-
-<pre>children: { count: 2..4, only: { tag: &quot;em&quot; } }</pre>
-
-<p># Get funky: assert that there is a “div”, with an “ul” ancestor # and an
-“li” parent (with “class” = “enum”), and containing a # “span” descendant
-that contains text matching /hello world/ <a
-href="Expectations.html#method-i-must_have_tag">#must_have_tag</a> tag:
-“div”,</p>
-
-<pre>ancestor: { tag: &quot;ul&quot; },
-parent: { tag: &quot;li&quot;,
-             attributes: { class: &quot;enum&quot; } },
-descendant: { tag: &quot;span&quot;,
-                 child: /hello world/ }</pre>
-</li></ul>
-
-<p><strong>Please note</strong>: <code>must_have_tag</code> and
-<code>wont_have_tag</code> only work with well-formed XHTML. They recognize
-a few tags as implicitly self-closing (like br and hr and such) but will
-not work correctly with tags that allow optional closing tags (p, li, td).
-<em>You must explicitly close all of your tags to use these
-assertions.</em></p>
-
-<p>See also <a
-href="../../ActionController/TestCase.html#method-i-assert_tag">ActionController::TestCase#assert_tag</a>
-See also ActionView::TestCase#assert_tag See also
-ActionDispatch::IntegrationTest#assert_tag</p>
-          
-          
-
-          
-          <div class="method-source-code" id="must_have_tag-source">
-            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 511</span>
-  </pre>
           </div>
           
         </div>
@@ -542,7 +379,7 @@ href="../../ActiveJob/TestCase.html#method-i-assert_performed_jobs">ActiveJob::T
 
           
           <div class="method-source-code" id="must_perform_jobs-source">
-            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 635</span>
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 464</span>
     </pre>
           </div>
           
@@ -586,7 +423,7 @@ arguments.</p>
 
           
           <div class="method-source-code" id="must_perform_with-source">
-            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 693</span>
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 522</span>
     </pre>
           </div>
           
@@ -634,84 +471,15 @@ action: &quot;show&quot;)</code> and so on.</p>
 </pre>
 
 <p>See also <a
-href="../../ActionController/TestCase.html#method-i-assert_redirected_to">ActionController::TestCase#assert_redirected_to</a>
-See also ActionView::TestCase#assert_redirected_to See also
-ActionDispatch::IntegrationTest#assert_redirected_to</p>
+href="../../ActionView/TestCase.html#method-i-assert_redirected_to">ActionView::TestCase#assert_redirected_to</a>
+See also <a
+href="../../ActionDispatch/IntegrationTest.html#method-i-assert_redirected_to">ActionDispatch::IntegrationTest#assert_redirected_to</a></p>
           
           
 
           
           <div class="method-source-code" id="must_redirect_to-source">
-            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 88</span>
-  </pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
-    
-      <div id="method-i-must_render_template" class="method-detail ">
-        
-        
-        <div class="method-heading">
-          <span class="method-callseq">
-            must_render_template(options = {}, message = nil)
-          </span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-        
-
-        <div class="method-description">
-          
-          <p>Expects that the request was rendered with the appropriate template file or
-partials.</p>
-
-<pre class="ruby"><span class="ruby-comment"># expect that the &quot;new&quot; view template was rendered</span>
-<span class="ruby-identifier">must_render_template</span> <span class="ruby-string">&quot;new&quot;</span>
-
-<span class="ruby-comment"># expect that the exact template &quot;admin/posts/new&quot; was rendered</span>
-<span class="ruby-identifier">must_render_template</span> <span class="ruby-regexp">%r{\Aadmin/posts/new\Z}</span>
-
-<span class="ruby-comment"># expect that the layout &#39;admin&#39; was rendered</span>
-<span class="ruby-identifier">must_render_template</span> <span class="ruby-identifier">layout</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;admin&#39;</span>
-<span class="ruby-identifier">must_render_template</span> <span class="ruby-identifier">layout</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;layouts/admin&#39;</span>
-<span class="ruby-identifier">must_render_template</span> <span class="ruby-identifier">layout</span><span class="ruby-operator">:</span> :<span class="ruby-identifier">admin</span>
-
-<span class="ruby-comment"># expect that no layout was rendered</span>
-<span class="ruby-identifier">must_render_template</span> <span class="ruby-identifier">layout</span><span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>
-<span class="ruby-identifier">must_render_template</span> <span class="ruby-identifier">layout</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
-
-<span class="ruby-comment"># expect that the &quot;_customer&quot; partial was rendered twice</span>
-<span class="ruby-identifier">must_render_template</span> <span class="ruby-identifier">partial</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;_customer&#39;</span>, <span class="ruby-identifier">count</span><span class="ruby-operator">:</span> <span class="ruby-value">2</span>
-
-<span class="ruby-comment"># expect that no partials were rendered</span>
-<span class="ruby-identifier">must_render_template</span> <span class="ruby-identifier">partial</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
-</pre>
-
-<p>In a view test case, you can also expect that specific locals are passed to
-partials:</p>
-
-<pre class="ruby"><span class="ruby-comment"># expect that the &quot;_customer&quot; partial was rendered with a specific object</span>
-<span class="ruby-identifier">must_render_template</span> <span class="ruby-identifier">partial</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;_customer&#39;</span>, <span class="ruby-identifier">locals</span><span class="ruby-operator">:</span> { <span class="ruby-identifier">customer</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@customer</span> }
-</pre>
-
-<p>See also <a
-href="../../ActionController/TestCase.html#method-i-assert_template">ActionController::TestCase#assert_template</a>
-See also ActionView::TestCase#assert_template See also
-ActionDispatch::IntegrationTest#assert_template</p>
-          
-          
-
-          
-          <div class="method-source-code" id="must_render_template-source">
-            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 125</span>
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 86</span>
   </pre>
           </div>
           
@@ -765,15 +533,15 @@ Rack::Utils::SYMBOL_TO_STATUS_CODE for a full list.</p>
 </pre>
 
 <p>See also <a
-href="../../ActionController/TestCase.html#method-i-assert_response">ActionController::TestCase#assert_response</a>
-See also ActionView::TestCase#assert_response See also
-ActionDispatch::IntegrationTest#assert_response</p>
+href="../../ActionView/TestCase.html#method-i-assert_response">ActionView::TestCase#assert_response</a>
+See also <a
+href="../../ActionDispatch/IntegrationTest.html#method-i-assert_response">ActionDispatch::IntegrationTest#assert_response</a></p>
           
           
 
           
           <div class="method-source-code" id="must_respond_with-source">
-            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 64</span>
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 63</span>
   </pre>
           </div>
           
@@ -829,15 +597,15 @@ to display upon failure.</p>
 </pre>
 
 <p>See also <a
-href="../../ActionController/TestCase.html#method-i-assert_routing">ActionController::TestCase#assert_routing</a>
-See also ActionView::TestCase#assert_routing See also
-ActionDispatch::IntegrationTest#assert_routing</p>
+href="../../ActionView/TestCase.html#method-i-assert_routing">ActionView::TestCase#assert_routing</a>
+See also <a
+href="../../ActionDispatch/IntegrationTest.html#method-i-assert_routing">ActionDispatch::IntegrationTest#assert_routing</a></p>
           
           
 
           
           <div class="method-source-code" id="must_route_for-source">
-            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 221</span>
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 179</span>
 <span class="ruby-identifier">infect_an_assertion</span> <span class="ruby-value">:assert_routing</span>, <span class="ruby-value">:must_route_for</span>
 </pre>
           </div>
@@ -889,15 +657,15 @@ message for assertion failures.</p>
 </pre>
 
 <p>See also <a
-href="../../ActionController/TestCase.html#method-i-assert_generates">ActionController::TestCase#assert_generates</a>
-See also ActionView::TestCase#assert_generates See also
-ActionDispatch::IntegrationTest#assert_generates</p>
+href="../../ActionView/TestCase.html#method-i-assert_generates">ActionView::TestCase#assert_generates</a>
+See also <a
+href="../../ActionDispatch/IntegrationTest.html#method-i-assert_generates">ActionDispatch::IntegrationTest#assert_generates</a></p>
           
           
 
           
           <div class="method-source-code" id="must_route_from-source">
-            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 150</span>
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 110</span>
 <span class="ruby-identifier">infect_an_assertion</span> <span class="ruby-value">:assert_generates</span>, <span class="ruby-value">:must_route_to</span>
 </pre>
           </div>
@@ -1037,15 +805,15 @@ the block is called with an array of all matched elements.</p>
 </pre>
 
 <p>See also <a
-href="../../ActionController/TestCase.html#method-i-assert_select">ActionController::TestCase#assert_select</a>
-See also ActionView::TestCase#assert_select See also
-ActionDispatch::IntegrationTest#assert_select</p>
+href="../../ActionView/TestCase.html#method-i-assert_select">ActionView::TestCase#assert_select</a>
+See also <a
+href="../../ActionDispatch/IntegrationTest.html#method-i-assert_select">ActionDispatch::IntegrationTest#assert_select</a></p>
           
           
 
           
           <div class="method-source-code" id="must_select-source">
-            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 318</span>
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 275</span>
   </pre>
           </div>
           
@@ -1092,15 +860,15 @@ ActionDispatch::IntegrationTest#assert_select</p>
 </pre>
 
 <p>See also <a
-href="../../ActionController/TestCase.html#method-i-assert_select_email">ActionController::TestCase#assert_select_email</a>
-See also ActionView::TestCase#assert_select_email See also
-ActionDispatch::IntegrationTest#assert_select_email</p>
+href="../../ActionView/TestCase.html#method-i-assert_select_email">ActionView::TestCase#assert_select_email</a>
+See also <a
+href="../../ActionDispatch/IntegrationTest.html#method-i-assert_select_email">ActionDispatch::IntegrationTest#assert_select_email</a></p>
           
           
 
           
           <div class="method-source-code" id="must_select_email-source">
-            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 341</span>
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 297</span>
   </pre>
           </div>
           
@@ -1162,15 +930,15 @@ elements.</p>
 </pre>
 
 <p>See also <a
-href="../../ActionController/TestCase.html#method-i-assert_select_encoded">ActionController::TestCase#assert_select_encoded</a>
-See also ActionView::TestCase#assert_select_encoded See also
-ActionDispatch::IntegrationTest#assert_select_encoded</p>
+href="../../ActionView/TestCase.html#method-i-assert_select_encoded">ActionView::TestCase#assert_select_encoded</a>
+See also <a
+href="../../ActionDispatch/IntegrationTest.html#method-i-assert_select_encoded">ActionDispatch::IntegrationTest#assert_select_encoded</a></p>
           
           
 
           
           <div class="method-source-code" id="must_select_encoded-source">
-            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 381</span>
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 336</span>
   </pre>
           </div>
           
@@ -1242,18 +1010,19 @@ before and after invoking.</p>
 </pre>
 
 <p>See also <a
-href="../../ActionController/TestCase.html#method-i-refute_dom_equal">ActionController::TestCase#refute_dom_equal</a>
-See also ActionView::TestCase#refute_dom_equal See also
-ActionDispatch::IntegrationTest#refute_dom_equal See also <a
-href="../../ActionController/TestCase.html#method-i-assert_dom_not_equal">ActionController::TestCase#assert_dom_not_equal</a>
-See also ActionView::TestCase#assert_dom_not_equal See also
-ActionDispatch::IntegrationTest#assert_dom_not_equal</p>
+href="../../ActionView/TestCase.html#method-i-refute_dom_equal">ActionView::TestCase#refute_dom_equal</a>
+See also <a
+href="../../ActionDispatch/IntegrationTest.html#method-i-refute_dom_equal">ActionDispatch::IntegrationTest#refute_dom_equal</a>
+See also <a
+href="../../ActionView/TestCase.html#method-i-assert_dom_not_equal">ActionView::TestCase#assert_dom_not_equal</a>
+See also <a
+href="../../ActionDispatch/IntegrationTest.html#method-i-assert_dom_not_equal">ActionDispatch::IntegrationTest#assert_dom_not_equal</a></p>
           
           
 
           
           <div class="method-source-code" id="wont_dom_equal-source">
-            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 411</span>
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 363</span>
 <span class="ruby-identifier">infect_an_assertion</span> <span class="ruby-value">:refute_dom_equal</span>, <span class="ruby-value">:wont_dom_equal</span>
 </pre>
           </div>
@@ -1312,7 +1081,7 @@ href="../../ActiveJob/TestCase.html#method-i-assert_no_enqueued_jobs">ActiveJob:
 
           
           <div class="method-source-code" id="wont_enqueue_jobs-source">
-            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 597</span>
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 426</span>
     </pre>
           </div>
           
@@ -1373,7 +1142,7 @@ href="../../ActiveJob/TestCase.html#method-i-assert_no_performed_jobs">ActiveJob
 
           
           <div class="method-source-code" id="wont_perform_jobs-source">
-            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 664</span>
+            <pre><span class="ruby-comment"># File lib/minitest/rails/expectations.rb, line 493</span>
     </pre>
           </div>
           
@@ -1393,7 +1162,7 @@ href="../../ActiveJob/TestCase.html#method-i-assert_no_performed_jobs">ActiveJob
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.2.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

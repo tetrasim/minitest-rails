@@ -1,11 +1,12 @@
-Fri, 29 May 2015 15:41:04 -0600
-lib/minitest/rails/assertions.rb	Fri, 29 May 2015 10:46:00 -0600
-lib/minitest/rails/constant_lookup.rb	Mon, 27 Apr 2015 08:52:11 -0600
-lib/minitest/rails/expectations.rb	Fri, 29 May 2015 10:46:06 -0600
-lib/minitest/rails/railtie.rb	Mon, 27 Apr 2015 08:52:11 -0600
-lib/minitest/rails/version.rb	Fri, 29 May 2015 12:10:21 -0600
-lib/minitest/rails.rb	Mon, 27 Apr 2015 08:52:17 -0600
-lib/minitest-rails.rb	Mon, 27 Apr 2015 08:52:11 -0600
-CHANGELOG.rdoc	Fri, 29 May 2015 12:12:37 -0600
-Manifest.txt	Fri, 29 May 2015 12:10:26 -0600
-README.rdoc	Mon, 27 Apr 2015 08:52:11 -0600
+Fri, 01 Jul 2016 09:25:00 -0600
+lib/minitest/rails/assertions.rb	Fri, 01 Jul 2016 09:24:42 -0600
+lib/minitest/rails/constant_lookup.rb	Fri, 01 Jul 2016 09:24:42 -0600
+lib/minitest/rails/controller.rb	Fri, 01 Jul 2016 09:24:42 -0600
+lib/minitest/rails/expectations.rb	Fri, 01 Jul 2016 09:24:42 -0600
+lib/minitest/rails/railtie.rb	Fri, 01 Jul 2016 09:24:42 -0600
+lib/minitest/rails/version.rb	Fri, 01 Jul 2016 09:24:42 -0600
+lib/minitest/rails.rb	Fri, 01 Jul 2016 09:24:42 -0600
+lib/minitest-rails.rb	Fri, 01 Jul 2016 09:24:42 -0600
+CHANGELOG.rdoc	Fri, 01 Jul 2016 09:24:42 -0600
+Manifest.txt	Fri, 01 Jul 2016 09:24:42 -0600
+README.rdoc	Fri, 01 Jul 2016 09:24:42 -0600

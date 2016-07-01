@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>Table of Contents - minitest-rails-2.2.0 Documentation</title>
+<title>Table of Contents - minitest-rails-3.0.0 Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
@@ -20,7 +20,7 @@
 
 <body id="top" class="table-of-contents">
 <main role="main">
-<h1 class="class">Table of Contents - minitest-rails-2.2.0 Documentation</h1>
+<h1 class="class">Table of Contents - minitest-rails-3.0.0 Documentation</h1>
 
 <h2 id="pages">Pages</h2>
 <ul>
@@ -28,6 +28,7 @@
     <a href="CHANGELOG_rdoc.html">CHANGELOG</a>
 
     <ul>
+      <li><a href="CHANGELOG_rdoc.html#label-3.0.0+-2F+2016-07-01">3.0.0 / 2016-07-01</a>
       <li><a href="CHANGELOG_rdoc.html#label-2.2.0+-2F+2015-05-29">2.2.0 / 2015-05-29</a>
       <li><a href="CHANGELOG_rdoc.html#label-2.1.1+-2F+2014-10-28">2.1.1 / 2014-10-28</a>
       <li><a href="CHANGELOG_rdoc.html#label-2.1.0+-2F+2014-07-08">2.1.0 / 2014-07-08</a>
@@ -69,9 +70,9 @@
       <li><a href="README_rdoc.html#label-Configure">Configure</a>
       <li><a href="README_rdoc.html#label-Usage">Usage</a>
       <li><a href="README_rdoc.html#label-Running+Tests">Running Tests</a>
+      <li><a href="README_rdoc.html#label-Using+Rails+4.1+or+4.2">Using Rails 4.1 or 4.2</a>
       <li><a href="README_rdoc.html#label-Using+Rails+4.0+or+earlier">Using Rails 4.0 or earlier</a>
       <li><a href="README_rdoc.html#label-Capybara">Capybara</a>
-      <li><a href="README_rdoc.html#label-RSpec+Compatibility">RSpec Compatibility</a>
       <li><a href="README_rdoc.html#label-Get+Involved">Get Involved</a>
       <li><a href="README_rdoc.html#label-License">License</a>
     </ul>
@@ -144,6 +145,11 @@
 <ul>
 
   <li class="method">
+    <a href="Minitest/Rails.html#method-c-controller_tests-3F">::controller_tests?</a>
+    &mdash;
+    <span class="container">Minitest::Rails</span>
+
+  <li class="method">
     <a href="ActionController/TestCase.html#method-c-determine_default_controller_class">::determine_default_controller_class</a>
     &mdash;
     <span class="container">ActionController::TestCase</span>
@@ -164,6 +170,11 @@
     <span class="container">ActionMailer::TestCase</span>
 
   <li class="method">
+    <a href="ActionView/TestCase.html#method-i-assert_difference">#assert_difference</a>
+    &mdash;
+    <span class="container">ActionView::TestCase</span>
+
+  <li class="method">
     <a href="ActiveSupport/TestCase.html#method-i-assert_difference">#assert_difference</a>
     &mdash;
     <span class="container">ActiveSupport::TestCase</span>
@@ -174,19 +185,24 @@
     <span class="container">ActionDispatch::IntegrationTest</span>
 
   <li class="method">
-    <a href="ActionView/TestCase.html#method-i-assert_difference">#assert_difference</a>
+    <a href="ActionView/TestCase.html#method-i-assert_dom_equal">#assert_dom_equal</a>
     &mdash;
     <span class="container">ActionView::TestCase</span>
 
   <li class="method">
-    <a href="ActionController/TestCase.html#method-i-assert_dom_equal">#assert_dom_equal</a>
+    <a href="ActionDispatch/IntegrationTest.html#method-i-assert_dom_equal">#assert_dom_equal</a>
     &mdash;
-    <span class="container">ActionController::TestCase</span>
+    <span class="container">ActionDispatch::IntegrationTest</span>
 
   <li class="method">
-    <a href="ActionController/TestCase.html#method-i-assert_dom_not_equal">#assert_dom_not_equal</a>
+    <a href="ActionDispatch/IntegrationTest.html#method-i-assert_dom_not_equal">#assert_dom_not_equal</a>
     &mdash;
-    <span class="container">ActionController::TestCase</span>
+    <span class="container">ActionDispatch::IntegrationTest</span>
+
+  <li class="method">
+    <a href="ActionView/TestCase.html#method-i-assert_dom_not_equal">#assert_dom_not_equal</a>
+    &mdash;
+    <span class="container">ActionView::TestCase</span>
 
   <li class="method">
     <a href="ActiveJob/TestCase.html#method-i-assert_enqueued_jobs">#assert_enqueued_jobs</a>
@@ -199,12 +215,12 @@
     <span class="container">ActiveJob::TestCase</span>
 
   <li class="method">
-    <a href="ActionController/TestCase.html#method-i-assert_generates">#assert_generates</a>
+    <a href="ActionView/TestCase.html#method-i-assert_generates">#assert_generates</a>
     &mdash;
-    <span class="container">ActionController::TestCase</span>
+    <span class="container">ActionView::TestCase</span>
 
   <li class="method">
-    <a href="ActionDispatch/IntegrationTest.html#method-i-assert_no_difference">#assert_no_difference</a>
+    <a href="ActionDispatch/IntegrationTest.html#method-i-assert_generates">#assert_generates</a>
     &mdash;
     <span class="container">ActionDispatch::IntegrationTest</span>
 
@@ -219,6 +235,11 @@
     <span class="container">ActionView::TestCase</span>
 
   <li class="method">
+    <a href="ActionDispatch/IntegrationTest.html#method-i-assert_no_difference">#assert_no_difference</a>
+    &mdash;
+    <span class="container">ActionDispatch::IntegrationTest</span>
+
+  <li class="method">
     <a href="ActiveJob/TestCase.html#method-i-assert_no_enqueued_jobs">#assert_no_enqueued_jobs</a>
     &mdash;
     <span class="container">ActiveJob::TestCase</span>
@@ -227,11 +248,6 @@
     <a href="ActiveJob/TestCase.html#method-i-assert_no_performed_jobs">#assert_no_performed_jobs</a>
     &mdash;
     <span class="container">ActiveJob::TestCase</span>
-
-  <li class="method">
-    <a href="ActionController/TestCase.html#method-i-assert_no_tag">#assert_no_tag</a>
-    &mdash;
-    <span class="container">ActionController::TestCase</span>
 
   <li class="method">
     <a href="ActiveJob/TestCase.html#method-i-assert_performed_jobs">#assert_performed_jobs</a>
@@ -244,64 +260,74 @@
     <span class="container">ActiveJob::TestCase</span>
 
   <li class="method">
-    <a href="ActionController/TestCase.html#method-i-assert_recognizes">#assert_recognizes</a>
+    <a href="ActionDispatch/IntegrationTest.html#method-i-assert_recognizes">#assert_recognizes</a>
     &mdash;
-    <span class="container">ActionController::TestCase</span>
+    <span class="container">ActionDispatch::IntegrationTest</span>
 
   <li class="method">
-    <a href="ActionController/TestCase.html#method-i-assert_redirected_to">#assert_redirected_to</a>
+    <a href="ActionView/TestCase.html#method-i-assert_recognizes">#assert_recognizes</a>
     &mdash;
-    <span class="container">ActionController::TestCase</span>
+    <span class="container">ActionView::TestCase</span>
 
   <li class="method">
-    <a href="ActionController/TestCase.html#method-i-assert_response">#assert_response</a>
+    <a href="ActionDispatch/IntegrationTest.html#method-i-assert_redirected_to">#assert_redirected_to</a>
     &mdash;
-    <span class="container">ActionController::TestCase</span>
+    <span class="container">ActionDispatch::IntegrationTest</span>
 
   <li class="method">
-    <a href="ActionController/TestCase.html#method-i-assert_routing">#assert_routing</a>
+    <a href="ActionView/TestCase.html#method-i-assert_redirected_to">#assert_redirected_to</a>
     &mdash;
-    <span class="container">ActionController::TestCase</span>
+    <span class="container">ActionView::TestCase</span>
 
   <li class="method">
-    <a href="ActionController/TestCase.html#method-i-assert_select">#assert_select</a>
+    <a href="ActionDispatch/IntegrationTest.html#method-i-assert_response">#assert_response</a>
     &mdash;
-    <span class="container">ActionController::TestCase</span>
+    <span class="container">ActionDispatch::IntegrationTest</span>
 
   <li class="method">
-    <a href="ActionController/TestCase.html#method-i-assert_select_email">#assert_select_email</a>
+    <a href="ActionView/TestCase.html#method-i-assert_response">#assert_response</a>
     &mdash;
-    <span class="container">ActionController::TestCase</span>
+    <span class="container">ActionView::TestCase</span>
 
   <li class="method">
-    <a href="ActionController/TestCase.html#method-i-assert_select_encoded">#assert_select_encoded</a>
+    <a href="ActionDispatch/IntegrationTest.html#method-i-assert_routing">#assert_routing</a>
     &mdash;
-    <span class="container">ActionController::TestCase</span>
+    <span class="container">ActionDispatch::IntegrationTest</span>
 
   <li class="method">
-    <a href="ActionController/TestCase.html#method-i-assert_tag">#assert_tag</a>
+    <a href="ActionView/TestCase.html#method-i-assert_routing">#assert_routing</a>
     &mdash;
-    <span class="container">ActionController::TestCase</span>
+    <span class="container">ActionView::TestCase</span>
 
   <li class="method">
-    <a href="ActionController/TestCase.html#method-i-assert_template">#assert_template</a>
+    <a href="ActionDispatch/IntegrationTest.html#method-i-assert_select">#assert_select</a>
     &mdash;
-    <span class="container">ActionController::TestCase</span>
+    <span class="container">ActionDispatch::IntegrationTest</span>
 
   <li class="method">
-    <a href="ActionController/TestCase.html#method-i-delete">#delete</a>
+    <a href="ActionView/TestCase.html#method-i-assert_select">#assert_select</a>
     &mdash;
-    <span class="container">ActionController::TestCase</span>
+    <span class="container">ActionView::TestCase</span>
 
   <li class="method">
-    <a href="ActionController/TestCase.html#method-i-get">#get</a>
+    <a href="ActionView/TestCase.html#method-i-assert_select_email">#assert_select_email</a>
     &mdash;
-    <span class="container">ActionController::TestCase</span>
+    <span class="container">ActionView::TestCase</span>
 
   <li class="method">
-    <a href="ActionController/TestCase.html#method-i-head">#head</a>
+    <a href="ActionDispatch/IntegrationTest.html#method-i-assert_select_email">#assert_select_email</a>
     &mdash;
-    <span class="container">ActionController::TestCase</span>
+    <span class="container">ActionDispatch::IntegrationTest</span>
+
+  <li class="method">
+    <a href="ActionDispatch/IntegrationTest.html#method-i-assert_select_encoded">#assert_select_encoded</a>
+    &mdash;
+    <span class="container">ActionDispatch::IntegrationTest</span>
+
+  <li class="method">
+    <a href="ActionView/TestCase.html#method-i-assert_select_encoded">#assert_select_encoded</a>
+    &mdash;
+    <span class="container">ActionView::TestCase</span>
 
   <li class="method">
     <a href="Minitest/Rails/Expectations.html#method-i-must_change">#must_change</a>
@@ -324,11 +350,6 @@
     <span class="container">Minitest::Rails::Expectations</span>
 
   <li class="method">
-    <a href="Minitest/Rails/Expectations.html#method-i-must_have_tag">#must_have_tag</a>
-    &mdash;
-    <span class="container">Minitest::Rails::Expectations</span>
-
-  <li class="method">
     <a href="Minitest/Rails/Expectations.html#method-i-must_perform_jobs">#must_perform_jobs</a>
     &mdash;
     <span class="container">Minitest::Rails::Expectations</span>
@@ -340,11 +361,6 @@
 
   <li class="method">
     <a href="Minitest/Rails/Expectations.html#method-i-must_redirect_to">#must_redirect_to</a>
-    &mdash;
-    <span class="container">Minitest::Rails::Expectations</span>
-
-  <li class="method">
-    <a href="Minitest/Rails/Expectations.html#method-i-must_render_template">#must_render_template</a>
     &mdash;
     <span class="container">Minitest::Rails::Expectations</span>
 
@@ -379,24 +395,9 @@
     <span class="container">Minitest::Rails::Expectations</span>
 
   <li class="method">
-    <a href="ActionController/TestCase.html#method-i-patch">#patch</a>
+    <a href="ActionDispatch/IntegrationTest.html#method-i-refute_difference">#refute_difference</a>
     &mdash;
-    <span class="container">ActionController::TestCase</span>
-
-  <li class="method">
-    <a href="ActionController/TestCase.html#method-i-post">#post</a>
-    &mdash;
-    <span class="container">ActionController::TestCase</span>
-
-  <li class="method">
-    <a href="ActionController/TestCase.html#method-i-put">#put</a>
-    &mdash;
-    <span class="container">ActionController::TestCase</span>
-
-  <li class="method">
-    <a href="ActionView/TestCase.html#method-i-refute_difference">#refute_difference</a>
-    &mdash;
-    <span class="container">ActionView::TestCase</span>
+    <span class="container">ActionDispatch::IntegrationTest</span>
 
   <li class="method">
     <a href="ActiveSupport/TestCase.html#method-i-refute_difference">#refute_difference</a>
@@ -404,19 +405,19 @@
     <span class="container">ActiveSupport::TestCase</span>
 
   <li class="method">
-    <a href="ActionDispatch/IntegrationTest.html#method-i-refute_difference">#refute_difference</a>
+    <a href="ActionView/TestCase.html#method-i-refute_difference">#refute_difference</a>
+    &mdash;
+    <span class="container">ActionView::TestCase</span>
+
+  <li class="method">
+    <a href="ActionDispatch/IntegrationTest.html#method-i-refute_dom_equal">#refute_dom_equal</a>
     &mdash;
     <span class="container">ActionDispatch::IntegrationTest</span>
 
   <li class="method">
-    <a href="ActionController/TestCase.html#method-i-refute_dom_equal">#refute_dom_equal</a>
+    <a href="ActionView/TestCase.html#method-i-refute_dom_equal">#refute_dom_equal</a>
     &mdash;
-    <span class="container">ActionController::TestCase</span>
-
-  <li class="method">
-    <a href="ActionController/TestCase.html#method-i-refute_tag">#refute_tag</a>
-    &mdash;
-    <span class="container">ActionController::TestCase</span>
+    <span class="container">ActionView::TestCase</span>
 
   <li class="method">
     <a href="Minitest/Rails/Expectations.html#method-i-wont_change">#wont_change</a>
@@ -443,7 +444,7 @@
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.2.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 
